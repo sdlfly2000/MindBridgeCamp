@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "components/calc/calc",
+    "pages/login/login",
+    "pages/logs/logs"
+  ],
+  "entryPagePath": "pages/welcome/welcome",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Real Estate Calc",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
+}

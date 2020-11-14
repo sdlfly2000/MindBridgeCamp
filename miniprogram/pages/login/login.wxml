@@ -1,0 +1,14 @@
+<!--miniprogram/pages/login.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="page-section-title">
+      <text>申请权限</text>
+    </view>
+    <view class="page-section-content">
+      <text>{{notificationAuthUerInfo}}</text>
+    </view>
+  </view>
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="weui-btn" type="primary">授权本人信息</button>
+</view>
+
+

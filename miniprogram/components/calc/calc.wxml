@@ -1,0 +1,32 @@
+<!--miniprogram/pages/calc/calc.wxml-->
+<mp-form-page title="购房价格计算">
+    <mp-form id="calcDataForm" rules="{{validationRules}}" models="{{calcData}}">
+        <mp-cells title="房屋情况">
+            <mp-cell prop="isFiveYearsAndOnlyOne" title="满五唯一">
+                <radio-group bindchange="FormInputChange" data-field="isFiveYearsAndOnlyOne">
+                    <radio value="true">是</radio>
+                    <radio value="false">否</radio>     
+                </radio-group>
+            </mp-cell>
+            <mp-cell prop="isFirstHand" title="一手动迁">
+                <radio-group bindchange="FormInputChange" data-field="isFirstHand">
+                    <label class="radio">
+                        <radio value="true">是</radio>
+                    </label>
+                    <label class="radio">
+                        <radio value="false">否</radio>  
+                    </label>   
+                </radio-group>
+            </mp-cell>
+            <mp-cell prop="purchasedPrice" title="买入价格">
+                <input type="number" bindinput="FormInputChange" data-field="purchasedPrice" class="weui-input" placeholder="万元"/>
+            </mp-cell>
+            <mp-cell prop="salePrice" title="卖出价格">
+                <input type="number" bindinput="FormInputChange" data-field="salePrice" class="weui-input" placeholder="万元"/>
+            </mp-cell>
+        </mp-cells>
+    </mp-form>
+    <view slot="button">
+        <button class="weui-btn" type="primary" bindtap="checkSession">计算</button>
+    </view>
+</mp-form-page>
