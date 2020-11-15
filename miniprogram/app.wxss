@@ -9,7 +9,7 @@
 }
 
 .page-section {
-  margin: 20rpx;
+  margin-bottom: 20rpx;
   border-bottom: dimgray dashed 1rpx;
   width: 100%;
   text-align: center;

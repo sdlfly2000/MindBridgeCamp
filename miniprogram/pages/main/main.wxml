@@ -1,0 +1,20 @@
+<!--miniprogram/pages/main.wxml-->
+<view class="container">
+  <view class="page-section">
+    <swiper indicator-dots="true" autoplay="true">
+        <swiper-item>
+          <view class="swipeItem1"></view>
+        </swiper-item>
+        <swiper-item>
+          <view class="swipeItem2"></view>
+        </swiper-item>
+        <swiper-item>
+          <view class="swipeItem3"></view>
+        </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="page-section">
+    
+  </view>
+</view>

@@ -1,16 +1,17 @@
 {
   "pages": [
+    "pages/main/main",
     "pages/welcome/welcome",
     "components/calc/calc",
     "pages/login/login",
-    "pages/logs/logs"
+    "pages/logs/logs"    
   ],
-  "entryPagePath": "pages/welcome/welcome",
+  "entryPagePath": "pages/main/main",
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Real Estate Calc",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "心之桥自习平台",
+    "navigationBarBackgroundColor": "#46b0f1",
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

@@ -1,5 +1,5 @@
 // app.ts
-import { Login } from "./utils/util"
+// import { Login } from "./utils/util"
 
 App<IAppOption>({
   globalData: {
@@ -14,6 +14,6 @@ App<IAppOption>({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    Login(this)
+    // Login(this)
   }
 })
