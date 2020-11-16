@@ -1,15 +1,15 @@
 /* miniprogram/pages/main.wxss */
 .swipeItem1{
   height: 100%;
-  background-color: blue;
+  background-color: #AFEEEE;
 }
 
 .swipeItem2{
   height: 100%;
-  background-color: red;
+  background-color: #B0C4DE;
 }
 
 .swipeItem3{
   height: 100%;
-  background-color: orange;
+  background-color: #A9A9A9;
 }
