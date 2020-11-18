@@ -23,3 +23,31 @@
 .page-section-content {
   margin: 20rpx;
 }
+
+.card-section {
+  margin: 5rpx;
+  width: 100%;
+  height: 100%;
+  border: #B0C4DE dotted 1rpx;
+}
+
+.card-item {
+  flex-direction: column;
+  margin: 5rpx;
+  width: 100%;
+  height: 100%;
+  border: black dotted 1rpx;
+}
+
+.card-title {
+  margin: 5rpx;
+  width: 100%;
+  height: 100%;
+  border: blue dotted 1rpx;
+}
+
+.card-image {
+  width: 50%;
+  height: 50%;
+  border: red dotted 1rpx;
+}

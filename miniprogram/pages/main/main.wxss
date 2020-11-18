@@ -13,3 +13,14 @@
   height: 100%;
   background-color: #A9A9A9;
 }
+
+.mainIcon {
+  width: 100rpx;
+  height: 100rpx;
+  border: #B0C4DE dashed;
+  border-radius: 2ch;
+}
+
+.mainIconTitle{
+  font-size: 20rpx;
+}

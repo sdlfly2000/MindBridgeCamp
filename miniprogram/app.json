@@ -6,7 +6,6 @@
     "pages/login/login",
     "pages/logs/logs"    
   ],
-  "entryPagePath": "pages/main/main",
   "tabBar": {
     "custom": true,
     "color": "#7A7E83",
@@ -38,6 +37,5 @@
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {
     "weui": true
-  },
-  "usingComponents": {}
+  }
 }

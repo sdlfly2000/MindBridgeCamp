@@ -3,18 +3,43 @@
   <view class="page-section">
     <swiper indicator-dots="true" autoplay="true">
         <swiper-item>
-          <view class="swipeItem1"></view>
+          <view class="swipeItem1">动态1</view>
         </swiper-item>
         <swiper-item>
-          <view class="swipeItem2"></view>
+          <view class="swipeItem2">动态2</view>
         </swiper-item>
         <swiper-item>
-          <view class="swipeItem3"></view>
+          <view class="swipeItem3">动态3</view>
         </swiper-item>
     </swiper>
   </view>
-
   <view class="page-section">
-    
+    <view class="weui-flex">
+        <view class="weui-flex__item">
+          <view><image class="mainIcon" src="/image/self-learn.png" /></view>
+          <view class="mainIconTitle">自习大厅</view>
+        </view>
+        <view class="weui-flex__item">
+          <view><image class="mainIcon" src="/image/reportIn.png" /></view>
+          <view class="mainIconTitle">打卡</view>
+        </view>
+        <view class="weui-flex__item">
+          <view><image class="mainIcon" src="/image/score.png" /></view>
+          <view class="mainIconTitle">积分</view>
+        </view>
+        <view class="weui-flex__item">
+          <view><image class="mainIcon" src="/image/pair.png" /></view>
+          <view class="mainIconTitle">匹配</view>
+        </view>
+    </view>
   </view>
-</view>
+  <view class="card-section">
+    <view class="card-item">
+      <view class="card-image"><image src=""></image></view>
+      <view class="card-description">
+        <view class="card-title"></view>
+        <view class="card-detail"></view>
+      </view>      
+    </view>
+  </view>
+</view> 

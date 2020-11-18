@@ -1,9 +1,7 @@
 Component({
-  options: {
-    addGlobalClass: true
-  },
   data: {
     selected: 0,
+    current: 0,
     color: "#7A7E83",
     selectedColor: "#3cc51f",
     list: [{
@@ -22,12 +20,13 @@ Component({
   },
   methods: {
     switchTab(e) {
+      console.info("Before: " + this.data.selected)
+      console.info("Before: " + this.data.current)
       const data = e.currentTarget.dataset
       const url = data.path
-      wx.switchTab({
-        url: url
-      })
+      wx.switchTab({url})
       this.setData({
+        current: data.index,
         selected: data.index
       })
     }
