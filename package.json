@@ -8,12 +8,23 @@
   },
   "keywords": [],
   "author": "",
-  "license": "",
+  "license": "ISC",
   "dependencies": {
+    "@miniprogram-component-plus/col": "^1.0.0",
+    "@miniprogram-component-plus/row": "^1.0.0",
     "weui-miniprogram": "^1.0.5"
   },
   "devDependencies": {
     "miniprogram-api-typings": "^2.8.3-1",
     "typescript": "^3.3.3333"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdlfly2000/MindBridgeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sdlfly2000/MindBridgeCamp/issues"
+  },
+  "homepage": "https://github.com/sdlfly2000/MindBridgeCamp#readme"
 }

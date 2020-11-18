@@ -1,6 +1,6 @@
 /**app.wxss**/
 .container{
-  height: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,10 +8,10 @@
 }
 
 .page-section {
-  margin-bottom: 20rpx;
   border-bottom: dimgray dashed 1rpx;
   width: 100%;
   text-align: center;
+  background-color:  white;
 }
 
 .page-section-title {
@@ -25,29 +25,44 @@
 }
 
 .card-section {
-  margin: 5rpx;
   width: 100%;
-  height: 100%;
   border: #B0C4DE dotted 1rpx;
 }
 
 .card-item {
-  flex-direction: column;
-  margin: 5rpx;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin: 20rpx;
   border: black dotted 1rpx;
+  height: 250rpx;
+}
+
+.card-image {
+  margin:5rpx;
+  width: 40%;
+  border: red dotted 1rpx;
+}
+
+.card-image-content{
+  height: 50rpx;
+  width: 60rpx;
+}
+
+.card-description {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }
 
 .card-title {
   margin: 5rpx;
-  width: 100%;
-  height: 100%;
+  height: 40%;
   border: blue dotted 1rpx;
 }
 
-.card-image {
-  width: 50%;
-  height: 50%;
-  border: red dotted 1rpx;
+.card-detail{
+  margin: 5rpx;
+  height: 60%;
+  border: rebeccapurple dotted 1rpx;
 }

@@ -24,3 +24,14 @@
 .mainIconTitle{
   font-size: 20rpx;
 }
+
+.headSection{
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 9;
+}
+
+.func-section{
+  padding-top: 10rpx;
+}
