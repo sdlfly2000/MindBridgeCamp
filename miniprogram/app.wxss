@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #f4faff;
 }
 
 .page-section {
@@ -36,6 +37,9 @@
   margin: 20rpx;
   border: black dotted 1rpx;
   height: 250rpx;
+  box-shadow: 5rpx 10rpx gray;
+  border-radius: 20rpx;
+  background-color: white;
 }
 
 .card-image {
