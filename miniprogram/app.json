@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/main/main",
-    "pages/welcome/welcome",
     "components/calc/calc",
     "pages/login/login",
-    "pages/logs/logs"    
+    "pages/logs/logs",
+    "components/LastestSection/latest"    
   ],
   "window": {
     "backgroundTextStyle": "light",

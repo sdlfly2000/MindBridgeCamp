@@ -1,0 +1,42 @@
+<!--components/LastestSection/latest.wxml-->
+<view class="card-section">
+  <view class="card-section-partial">
+    <view class="card-item">
+      <view class="card-image"><image class="card-image-content" src=""></image></view>
+      <view class="card-description">
+        <view class="card-title"></view>
+        <view class="card-detail"></view>
+      </view>      
+    </view>
+    <view class="card-item">
+      <view class="card-image"><image class="card-image-content" src=""></image></view>
+      <view class="card-description">
+        <view class="card-title"></view>
+        <view class="card-detail"></view>
+      </view>      
+    </view>
+    <view class="card-item">
+      <view class="card-image"><image class="card-image-content" src=""></image></view>
+      <view class="card-description">
+        <view class="card-title"></view>
+        <view class="card-detail"></view>
+      </view>      
+    </view>
+  </view>
+  <view class="card-section-partial">
+    <view class="card-item">
+      <view class="card-image"><image class="card-image-content" src=""></image></view>
+      <view class="card-description">
+        <view class="card-title"></view>
+        <view class="card-detail"></view>
+      </view>      
+    </view>
+    <view class="card-item">
+      <view class="card-image"><image class="card-image-content" src=""></image></view>
+      <view class="card-description">
+        <view class="card-title"></view>
+        <view class="card-detail"></view>
+      </view>      
+    </view>
+  </view>
+</view>

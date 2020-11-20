@@ -2,82 +2,32 @@
 <view class="container">
   <view class="headSection">
     <view class="page-section">
-      <swiper indicator-dots="true" autoplay="true">
-          <swiper-item>
-            <view class="swipeItem1">动态1</view>
-          </swiper-item>
-          <swiper-item>
-            <view class="swipeItem2">动态2</view>
-          </swiper-item>
-          <swiper-item>
-            <view class="swipeItem3">动态3</view>
-          </swiper-item>
-      </swiper>
+      <newsSection></newsSection>
     </view>
     <view class="page-section func-section">
       <view class="weui-flex">
-          <view class="weui-flex__item">
-            <view class="mainIcon"><image class="mainIcon-image" src="/image/self-learn.png" /></view>
-            <view class="mainIconTitle">自习大厅</view>
-          </view>
-          <view class="weui-flex__item">
-            <view class="mainIcon"><image class="mainIcon-image" src="/image/reportIn.png" /></view>
-            <view class="mainIconTitle">打卡</view>
-          </view>
-          <view class="weui-flex__item">
-            <view class="mainIcon"><image class="mainIcon-image" src="/image/score.png" /></view>
-            <view class="mainIconTitle">积分</view>
-          </view>
-          <view class="weui-flex__item">
-            <view class="mainIcon"><image class="mainIcon-image" src="/image/pair.png" /></view>
-            <view class="mainIconTitle">匹配</view>
-          </view>
-          <view class="weui-flex__item">
-            <view class="mainIcon"><image class="mainIcon-image" src="/image/myself.png" /></view>
-            <view class="mainIconTitle">我的</view>
-          </view>
+        <view class="weui-flex__item">
+          <view class="mainIcon"><image class="mainIcon-image" src="/image/self-learn.png" /></view>
+          <view class="mainIconTitle">自习大厅</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="mainIcon"><image class="mainIcon-image" src="/image/reportIn.png" /></view>
+          <view class="mainIconTitle">打卡</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="mainIcon"><image class="mainIcon-image" src="/image/score.png" /></view>
+          <view class="mainIconTitle">积分</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="mainIcon"><image class="mainIcon-image" src="/image/pair.png" /></view>
+          <view class="mainIconTitle">匹配</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="mainIcon"><image class="mainIcon-image" src="/image/myself.png" /></view>
+          <view class="mainIconTitle">我的</view>
+        </view>
       </view>
-    </view>
+    </view>    
   </view>
-  <view class="card-section">
-    <view class="card-section-partial">
-      <view class="card-item">
-        <view class="card-image"><image class="card-image-content" src=""></image></view>
-        <view class="card-description">
-          <view class="card-title"></view>
-          <view class="card-detail"></view>
-        </view>      
-      </view>
-      <view class="card-item">
-        <view class="card-image"><image class="card-image-content" src=""></image></view>
-        <view class="card-description">
-          <view class="card-title"></view>
-          <view class="card-detail"></view>
-        </view>      
-      </view>
-      <view class="card-item">
-        <view class="card-image"><image class="card-image-content" src=""></image></view>
-        <view class="card-description">
-          <view class="card-title"></view>
-          <view class="card-detail"></view>
-        </view>      
-      </view>
-    </view>
-    <view class="card-section-partial">
-      <view class="card-item">
-        <view class="card-image"><image class="card-image-content" src=""></image></view>
-        <view class="card-description">
-          <view class="card-title"></view>
-          <view class="card-detail"></view>
-        </view>      
-      </view>
-      <view class="card-item">
-        <view class="card-image"><image class="card-image-content" src=""></image></view>
-        <view class="card-description">
-          <view class="card-title"></view>
-          <view class="card-detail"></view>
-        </view>      
-      </view>
-    </view>
-  </view>
+  <latestSection class="latest-section"></latestSection>
 </view> 

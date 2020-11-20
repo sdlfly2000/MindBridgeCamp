@@ -1,0 +1,11 @@
+<swiper indicator-dots="true" autoplay="true">
+  <swiper-item>
+    <view class="swipeItem1">动态1</view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swipeItem2">动态2</view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swipeItem3">动态3</view>
+  </swiper-item>
+</swiper>

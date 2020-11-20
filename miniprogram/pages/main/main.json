@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}  
+  "usingComponents": {
+    "latestSection": "../../components/LastestSection/latest",
+    "newsSection": "../../components/NewsSection/news"
+  }  
 }

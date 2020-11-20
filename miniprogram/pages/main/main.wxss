@@ -1,19 +1,4 @@
 /* miniprogram/pages/main.wxss */
-.swipeItem1{
-  height: 100%;
-  background-color: #AFEEEE;
-}
-
-.swipeItem2{
-  height: 100%;
-  background-color: #B0C4DE;
-}
-
-.swipeItem3{
-  height: 100%;
-  background-color: #A9A9A9;
-}
-
 .mainIcon{
   display: flex;
   flex-direction: row;
@@ -44,4 +29,8 @@
   justify-content: center;
   height: 150rpx;
   background-color: #f4faff;
+}
+
+.latest-section{
+  width: 100%;
 }

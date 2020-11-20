@@ -1,0 +1,15 @@
+/* components/NewsSection/news.wxss */
+.swipeItem1{
+  height: 100%;
+  background-color: #AFEEEE;
+}
+
+.swipeItem2{
+  height: 100%;
+  background-color: #B0C4DE;
+}
+
+.swipeItem3{
+  height: 100%;
+  background-color: #A9A9A9;
+}
