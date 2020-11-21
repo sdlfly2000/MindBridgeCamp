@@ -6,10 +6,10 @@
 
 .swipeItem2{
   height: 100%;
-  background-color: #B0C4DE;
+  background-color: #afeeeec5;
 }
 
 .swipeItem3{
   height: 100%;
-  background-color: #A9A9A9;
+  background-color: #afeeee85;
 }

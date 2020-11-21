@@ -1,0 +1,53 @@
+<!--components/PersionalDetails/personal.wxml-->
+<mp-form>
+  <mp-cells title="基本信息">
+    <mp-cell prop="RealName" title="姓名">
+      <input type="text" bindinput="FormInputChange" data-field="realName" class="weui-input" placeholder="真实姓名"/>
+    </mp-cell>
+    <mp-cell prop="MajorIn" title="专业">
+      <input type="text" bindinput="FormInputChange" data-field="majorIn" class="weui-input" placeholder="专业"/>
+    </mp-cell>
+    <mp-cell prop="gender" title="性别">
+        <radio-group bindchange="FormInputChange" data-field="gender">
+            <radio value="true">男</radio>
+            <radio value="false">女</radio>     
+        </radio-group>
+    </mp-cell>
+    <mp-cell prop="height" title="身高">
+        <input type="number" bindinput="FormInputChange" data-field="height" class="weui-input" placeholder="米"/>
+    </mp-cell>
+    <mp-cell prop="weight" title="体重">
+        <input type="number" bindinput="FormInputChange" data-field="weight" class="weui-input" placeholder="Kg"/>
+    </mp-cell>
+    <mp-cell prop="hobby" title="兴趣">
+        <input type="text" bindinput="FormInputChange" data-field="hobby" class="weui-input" placeholder="兴趣爱好"/>
+    </mp-cell>
+    <mp-cell prop="learnConent" title="自习内容">
+        <input type="text" bindinput="FormInputChange" data-field="learnConent" class="weui-input" placeholder="自习内容"/>
+    </mp-cell>
+    <mp-cell prop="objective" title="意向">
+        <radio-group bindchange="FormInputChange" data-field="objective">
+            <radio value="1">升学</radio>
+            <radio value="2">出国</radio>
+            <radio value="3">就业</radio>
+            <radio value="4">公务员</radio>
+            <radio value="5">创业</radio>
+        </radio-group>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells title="意向">
+    <view wx:if="">
+      <mp-cell prop="continueStudy" title="升学">
+          <radio-group bindchange="FormInputChange" data-field="continueStudy">
+              <radio value="true">直妍</radio>
+              <radio value="false">考研</radio>     
+          </radio-group>
+      </mp-cell>
+    </view>
+    <view wx:if="">
+      <mp-cell prop="onBoardStudyCountry" title="国家">
+        <input type="text" bindinput="FormInputChange" data-field="onBoardStudyCountry" class="weui-input" placeholder="目标国家"/>
+      </mp-cell>
+    </view> 
+  </mp-cells>
+</mp-form>

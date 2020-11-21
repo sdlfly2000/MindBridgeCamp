@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "Personal-Details" : "../../components/PersionalDetails/personal"
+  }
+}

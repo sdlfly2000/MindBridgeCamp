@@ -11,6 +11,10 @@
           <view class="mainIconTitle">自习大厅</view>
         </view>
         <view class="weui-flex__item">
+          <view class="mainIcon"><image class="mainIcon-image" src="/image/pair.png" /></view>
+          <view class="mainIconTitle">匹配</view>
+        </view>
+        <view class="weui-flex__item">
           <view class="mainIcon"><image class="mainIcon-image" src="/image/reportIn.png" /></view>
           <view class="mainIconTitle">打卡</view>
         </view>
@@ -18,11 +22,7 @@
           <view class="mainIcon"><image class="mainIcon-image" src="/image/score.png" /></view>
           <view class="mainIconTitle">积分</view>
         </view>
-        <view class="weui-flex__item">
-          <view class="mainIcon"><image class="mainIcon-image" src="/image/pair.png" /></view>
-          <view class="mainIconTitle">匹配</view>
-        </view>
-        <view class="weui-flex__item">
+        <view class="weui-flex__item" bindtap="navigateToPersionalPage">
           <view class="mainIcon"><image class="mainIcon-image" src="/image/myself.png" /></view>
           <view class="mainIconTitle">我的</view>
         </view>

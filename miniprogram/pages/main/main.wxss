@@ -28,7 +28,7 @@
   flex-direction: column;
   justify-content: center;
   height: 150rpx;
-  background-color: #f4faff;
+  background-color: white;
 }
 
 .latest-section{

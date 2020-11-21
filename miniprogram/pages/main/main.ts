@@ -20,6 +20,10 @@ Page({
   },
   onShow(){
     
+  },
+
+  navigateToPersionalPage: function(){
+    wx.navigateTo({url:"../persional/persional"});
   }
 })
 

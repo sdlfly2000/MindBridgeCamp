@@ -1,0 +1,13 @@
+<view class="personal-head">
+  <view class="personal-info">
+    <view class="avatar-image-container">
+      <open-data class="avatar-image" type="userAvatarUrl"></open-data>
+    </view>
+    <view class="nickname-container">
+      <open-data class="nickname" type="userNickName"></open-data>
+    </view>
+  </view>
+</view>
+<view class="personal-details">
+  <Personal-Details></Personal-Details>
+</view>
