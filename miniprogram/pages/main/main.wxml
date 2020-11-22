@@ -6,7 +6,7 @@
     </view>
     <view class="page-section func-section">
       <view class="weui-flex">
-        <view class="weui-flex__item">
+        <view class="weui-flex__item" bindtap="navigateToHallPage">
           <view class="mainIcon"><image class="mainIcon-image" src="/image/self-learn.png" /></view>
           <view class="mainIconTitle">自习大厅</view>
         </view>

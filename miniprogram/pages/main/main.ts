@@ -21,9 +21,11 @@ Page({
   onShow(){
     
   },
-
   navigateToPersionalPage: function(){
     wx.navigateTo({url:"../persional/persional"});
+  },
+  navigateToHallPage: function(){
+    wx.navigateTo({url:"../hall/hall"});
   }
 })
 

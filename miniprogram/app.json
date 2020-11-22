@@ -6,7 +6,8 @@
     "pages/logs/logs",
     "components/calc/calc",
     "components/LastestSection/latest",
-    "components/NewsSection/news"
+    "components/NewsSection/news",
+    "pages/hall/hall"
   ],
   "window": {
     "backgroundTextStyle": "light",
