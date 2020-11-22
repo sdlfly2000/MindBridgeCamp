@@ -10,9 +10,9 @@
           <view class="mainIcon"><image class="mainIcon-image" src="/image/self-learn.png" /></view>
           <view class="mainIconTitle">自习大厅</view>
         </view>
-        <view class="weui-flex__item">
+        <view class="weui-flex__item" bindtap="navigateToPairPage">
           <view class="mainIcon"><image class="mainIcon-image" src="/image/pair.png" /></view>
-          <view class="mainIconTitle">匹配</view>
+          <view class="mainIconTitle">匹配中心</view>
         </view>
         <view class="weui-flex__item">
           <view class="mainIcon"><image class="mainIcon-image" src="/image/reportIn.png" /></view>

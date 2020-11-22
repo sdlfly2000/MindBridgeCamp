@@ -1,0 +1,4 @@
+<!--miniprogram/pages/pair/pair.wxml-->
+<view class="container">
+  <image mode="aspectFill" class="background-image" src="../../image/forest.png" />
+</view>

@@ -26,6 +26,9 @@ Page({
   },
   navigateToHallPage: function(){
     wx.navigateTo({url:"../hall/hall"});
+  },
+  navigateToPairPage: function(){
+    wx.navigateTo({url:"../pair/pair"});
   }
 })
 
