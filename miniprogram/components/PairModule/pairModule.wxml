@@ -1,0 +1,7 @@
+<mp-form id="pairPatten">
+  <mp-cells title="匹配方式">
+    <mp-checkbox-group prop="checkbox" multi="true">
+        <mp-checkbox label="专业" value="MajorIn"></mp-checkbox>
+    </mp-checkbox-group>
+  </mp-cells>
+</mp-form> 

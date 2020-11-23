@@ -1,4 +1,8 @@
 <!--miniprogram/pages/pair/pair.wxml-->
-<view class="container">
-  <image mode="aspectFill" class="background-image" src="../../image/forest.png" />
+<view class="pair-head">
+  <text class="pair-head-text">伙伴匹配</text>
+  <image class="pair-head-image" src="../../image/pair-head.png" />  
+</view>
+<view class="pair-module-container">
+  <pair-module></pair-module>
 </view>
