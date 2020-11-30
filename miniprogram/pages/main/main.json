@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "latestSection": "../../components/LastestSection/latest",
-    "newsSection": "../../components/NewsSection/news"
+    "newsSection": "../../components/NewsSection/news",
+    "mainMenu": "../../components/MainMenu/mainMenu"
   }  
 }

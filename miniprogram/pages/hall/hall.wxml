@@ -1,14 +1,1 @@
-<view class="menu-section">
-  <view class="menu-container">
-    <image class="menu-image" mode="aspectFill" src="../../image/LibStudyHall.jpg" /> 
-    <text class="menu-title">发起邀约</text>
-  </view>
-  <view class="menu-container">
-    <image class="menu-image" mode="aspectFill" src="../../image/note.png" /> 
-    <text class="menu-title">笔记分享</text>
-  </view>
-  <view class="menu-container">
-    <image class="menu-image" mode="aspectFill" src="../../image/exchange.png" /> 
-    <text class="menu-title">物品交换</text>
-  </view>
-</view>
+

@@ -4,11 +4,12 @@
     "pages/personal/personal",
     "pages/login/login",
     "pages/logs/logs",
+    "pages/hall/hall",
+    "pages/pair/pair",
     "components/calc/calc",
     "components/LastestSection/latest",
     "components/NewsSection/news",
-    "pages/hall/hall",
-    "pages/pair/pair"
+    "components/MainMenu/mainMenu"
   ],
   "tabBar":{
     "custom": true,

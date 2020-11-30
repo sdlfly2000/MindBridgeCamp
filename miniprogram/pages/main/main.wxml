@@ -1,33 +1,8 @@
-<!--miniprogram/pages/main.wxml-->
 <view class="container">
-  <view class="headSection">
-    <view class="page-section">
-      <newsSection></newsSection>
-    </view>
-    <view class="page-section func-section">
-      <view class="weui-flex">
-        <view class="weui-flex__item" bindtap="navigateToHallPage">
-          <view class="mainIcon"><image class="mainIcon-image" src="/image/self-learn.png" /></view>
-          <view class="mainIconTitle">自习大厅</view>
-        </view>
-        <view class="weui-flex__item" bindtap="navigateToPairPage">
-          <view class="mainIcon"><image class="mainIcon-image" src="/image/pair.png" /></view>
-          <view class="mainIconTitle">匹配中心</view>
-        </view>
-        <view class="weui-flex__item">
-          <view class="mainIcon"><image class="mainIcon-image" src="/image/reportIn.png" /></view>
-          <view class="mainIconTitle">打卡</view>
-        </view>
-        <view class="weui-flex__item">
-          <view class="mainIcon"><image class="mainIcon-image" src="/image/score.png" /></view>
-          <view class="mainIconTitle">积分</view>
-        </view>
-        <view class="weui-flex__item" bindtap="navigateToPersionalPage">
-          <view class="mainIcon"><image class="mainIcon-image" src="/image/myself.png" /></view>
-          <view class="mainIconTitle">我的</view>
-        </view>
-      </view>
-    </view>    
+  <view class="head-section">
+    <newsSection></newsSection>
   </view>
-  <latestSection class="latest-section"></latestSection>
+  <view class="func-section">
+    <mainMenu></mainMenu>
+  </view> 
 </view> 
