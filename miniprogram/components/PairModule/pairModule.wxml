@@ -2,6 +2,13 @@
   <mp-cells title="匹配方式">
     <mp-checkbox-group prop="checkbox" multi="true">
         <mp-checkbox label="专业" value="MajorIn"></mp-checkbox>
+        <mp-checkbox label="艺术" value="HobbyArt"></mp-checkbox>
+        <mp-checkbox label="体育" value="HobbySport"></mp-checkbox>
+        <mp-checkbox label="自习内容" value="LearningContent"></mp-checkbox>
+        <mp-checkbox label="毕业意向" value="AfterGraduation"></mp-checkbox>
     </mp-checkbox-group>
   </mp-cells>
+  <view class="button-area">
+    <button type="primary">确认</button>
+  </view>
 </mp-form> 

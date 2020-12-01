@@ -11,7 +11,7 @@
     "components/NewsSection/news",
     "components/MainMenu/mainMenu"
   ],
-  "tabBar":{
+  "tabBar": {
     "custom": true,
     "color": "#7A7E83",
     "selectedColor": "#3cc51f",
@@ -20,19 +20,19 @@
     "list": [
       {
         "pagePath": "pages/main/main",
-        "text":"主页"
+        "text": "主页"
       },
       {
         "pagePath": "pages/hall/hall",
-        "text":"自习大厅"
+        "text": "自习大厅"
       },
       {
         "pagePath": "pages/pair/pair",
-        "text":"匹配中心"
+        "text": "匹配中心"
       },
       {
         "pagePath": "pages/personal/personal",
-        "text":"我的"
+        "text": "我的"
       }
     ]
   },

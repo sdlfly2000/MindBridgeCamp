@@ -7,7 +7,7 @@ page {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 30%;
+  height: 10%;
 }
 
 .pair-head-image {
@@ -31,5 +31,5 @@ page {
 
 .pair-module-container {
   width: 100%;
-  height: 70%;
+  height: 90%;
 }

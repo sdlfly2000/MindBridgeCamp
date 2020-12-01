@@ -1,1 +1,3 @@
-/* components/PairModule/pairModule.wxss */
+.button-area {
+  margin-top: 20rpx;
+}
