@@ -20,6 +20,11 @@ radio{
   border-radius: 0 0 30% 10%;
 }
 
+.personal-details {
+  height: 60%;
+  overflow: scroll;
+}
+
 .personal-info {
   display: flex;
   flex-direction: column;

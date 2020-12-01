@@ -1,8 +1,6 @@
-<view class="container">
-  <view class="head-section">
-    <newsSection></newsSection>
-  </view>
-  <view class="func-section">
-    <mainMenu></mainMenu>
-  </view> 
-</view> 
+<view class="head-section">
+  <newsSection></newsSection>
+</view>
+<view class="func-section">
+  <mainMenu></mainMenu>
+</view>
