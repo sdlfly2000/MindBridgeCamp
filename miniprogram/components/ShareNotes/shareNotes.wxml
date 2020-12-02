@@ -1,0 +1,19 @@
+<view class="shareNotes-head">
+  <view class="shareNotes-title">笔记分享</view>
+</view>
+<view class="shareNotes-body">
+  <mp-form models="{{shareNotesData}}">
+    <mp-cell prop="图片" title="图片" ext-class="">
+      <button bindtap="GetPicture" >照片</button>
+    </mp-cell>
+    <mp-cell prop="标题" title="笔记标题" ext-class="">
+      <input bindinput="ShareNotesFormInputChange" data-field="noteTitle" class="weui-input" placeholder="笔记标题"/>
+    </mp-cell>
+    <mp-cell prop="笔记说明" title="笔记说明" ext-class="">
+      <input bindinput="ShareNotesFormInputChange" data-field="noteContent" class="weui-input" placeholder="笔记说明"/>
+    </mp-cell>
+  </mp-form>
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="SubmitShareNotes">确定</button>
+  </view>
+</view>

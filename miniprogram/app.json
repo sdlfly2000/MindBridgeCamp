@@ -10,7 +10,8 @@
     "components/LastestSection/latest",
     "components/NewsSection/news",
     "components/MainMenu/mainMenu",
-    "components/Invitation/invitation"
+    "components/Invitation/invitation",
+    "components/ShareNotes/shareNotes"
   ],
   "tabBar": {
     "custom": true,
