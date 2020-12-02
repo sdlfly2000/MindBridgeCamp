@@ -1,5 +1,5 @@
 <view class="menu-section">
-  <view class="menu-container">
+  <view class="menu-container" bindtap="DisplayInvitationDialog">
     <image class="menu-image" mode="aspectFill" src="../../image/LibStudyHall.jpg" /> 
     <text class="menu-title">发起邀约</text>
   </view>
@@ -12,3 +12,6 @@
     <text class="menu-title">物品交换</text>
   </view>
 </view>
+<mp-dialog title="发起邀约" show="{{showInvitationDialog}}" bindbuttontap="TapInvitationDialogButton" buttons="{{buttonsInvitationDialog}}">
+  <invitation></invitation>
+</mp-dialog>

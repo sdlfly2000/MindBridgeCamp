@@ -1,0 +1,19 @@
+<view class="invitation-body">
+  <mp-form models="{{invitationData}}">
+    <mp-cell prop="名称" title="名称" ext-class="">
+      <input bindinput="InvitationFormInputChange" data-field="Title" class="weui-input" placeholder="请输入名称"/>
+    </mp-cell>
+    <mp-cell prop="人数" title="人数" ext-class="">
+      <input bindinput="InvitationFormInputChange" data-field="NumMember" class="weui-input" placeholder="人数"/>
+    </mp-cell>
+    <mp-cell prop="自习内容" title="内容" ext-class="">
+      <input bindinput="InvitationFormInputChange" data-field="Content" class="weui-input" placeholder="自习内容"/>
+    </mp-cell>
+    <mp-cell prop="时间" title="时间" ext-class="">
+      <input bindinput="InvitationFormInputChange" data-field="DateTime" class="weui-input" placeholder="自习时间"/>
+    </mp-cell>
+    <mp-cell prop="地点" title="地点" ext-class="">
+      <input bindinput="InvitationFormInputChange" data-field="Place" class="weui-input" placeholder="自习地点"/>
+    </mp-cell>
+  </mp-form>
+</view>

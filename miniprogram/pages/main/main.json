@@ -2,6 +2,7 @@
   "usingComponents": {
     "latestSection": "../../components/LastestSection/latest",
     "newsSection": "../../components/NewsSection/news",
-    "mainMenu": "../../components/MainMenu/mainMenu"
+    "mainMenu": "../../components/MainMenu/mainMenu",
+    "invitation": "../../components/Invitation/invitation"
   }  
 }
