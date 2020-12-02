@@ -9,7 +9,8 @@
     "components/calc/calc",
     "components/LastestSection/latest",
     "components/NewsSection/news",
-    "components/MainMenu/mainMenu"
+    "components/MainMenu/mainMenu",
+    "components/Invitation/invitation"
   ],
   "tabBar": {
     "custom": true,

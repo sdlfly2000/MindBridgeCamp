@@ -1,7 +1,6 @@
 {
   "component": true,
-  "usingComponents": {    
-    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
+  "usingComponents": {
     "invitation": "../Invitation/invitation"
   }
 }

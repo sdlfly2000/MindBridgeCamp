@@ -1,4 +1,23 @@
-.invitation-body {
+page {
   width: 100%;
   height: 100%;
+}
+.invitation-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 10%;
+}
+
+.invitation-title {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.invitation-body {
+  width: 100%;
+  height: 90%;
 }

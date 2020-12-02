@@ -1,3 +1,6 @@
+<view class="invitation-head">
+  <view class="invitation-title">发起邀约</view>
+</view>
 <view class="invitation-body">
   <mp-form models="{{invitationData}}">
     <mp-cell prop="名称" title="名称" ext-class="">
@@ -16,4 +19,7 @@
       <input bindinput="InvitationFormInputChange" data-field="Place" class="weui-input" placeholder="自习地点"/>
     </mp-cell>
   </mp-form>
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="SubmitInvitation">确定</button>
+  </view>
 </view>
