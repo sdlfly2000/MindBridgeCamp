@@ -14,6 +14,6 @@
     </mp-cell>
   </mp-form>
   <view class="weui-btn-area">
-    <button class="weui-btn" type="primary" bindtap="SubmitExchnage">确定</button>
+    <button class="weui-btn" type="primary" bindtap="SubmitExchange">确定</button>
   </view>
 </view>
