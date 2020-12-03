@@ -9,6 +9,11 @@ Component({
       wx.navigateTo({
         url: "/components/ShareNotes/shareNotes"
       });
+    },
+    NavigateToExchange: function(){
+      wx.navigateTo({
+        url: "/components/Exchange/exchange"
+      });
     }
   }  
 })

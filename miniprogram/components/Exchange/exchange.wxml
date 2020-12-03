@@ -1,0 +1,19 @@
+<view class="exchange-head">
+  <view class="exchange-title">物品交换</view>
+</view>
+<view class="exchange-body">
+  <mp-form models="{{exchangeData}}">
+    <mp-cell prop="图片" title="图片" ext-class="">
+      <button bindtap="GetPicture" >照片</button>
+    </mp-cell>
+    <mp-cell prop="物品标题" title="物品标题" ext-class="">
+      <input bindinput="ExchangeFormInputChange" data-field="exchangeTitle" class="weui-input" placeholder="物品标题"/>
+    </mp-cell>
+    <mp-cell prop="物品说明" title="物品说明" ext-class="">
+      <input bindinput="ExchangeFormInputChange" data-field="exchnageContent" class="weui-input" placeholder="物品说明"/>
+    </mp-cell>
+  </mp-form>
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="SubmitExchnage">确定</button>
+  </view>
+</view>
