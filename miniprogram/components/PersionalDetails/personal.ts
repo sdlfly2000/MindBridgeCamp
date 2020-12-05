@@ -1,17 +1,16 @@
 Component({
   data:{
-    personalData:{
-
-    },
+    objective: "",
+    gender: "",
     validationRules: [
 
     ]
   },
   methods:{
-    FormInputChange(e: any){
-      const {field} = e.currentTarget.dataset
+    FormRadioChange(event){
+      const {name} = event.target.dataset
       this.setData({
-        [`personalData.${field}`]: e.detail.value
+        [`${name}`]: event.detail
       })
     }
   }

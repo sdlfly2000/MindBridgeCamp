@@ -1,3 +1,7 @@
+van-checkbox {
+  margin: 10rpx;
+}
+
 .button-area {
   margin-top: 20rpx;
 }

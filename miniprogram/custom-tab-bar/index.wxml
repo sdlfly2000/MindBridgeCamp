@@ -1,7 +1,3 @@
-<!--custom-tab-bar/index.wxml-->
-<cover-view class="tab-bar">
-  <cover-view class="tab-bar-border"></cover-view>
-  <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
-    <cover-view class="tab-bar-font" style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</cover-view>
-  </cover-view>
-</cover-view>
+<van-tabbar bind:change="switchTab" active="{{ selected }}" >
+  <van-tabbar-item wx:for="{{list}}" wx:key="index" icon="{{item.icon}}">{{item.text}}</van-tabbar-item>
+</van-tabbar>
