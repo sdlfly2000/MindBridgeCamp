@@ -2,7 +2,7 @@
   <view class="shareNotes-title">笔记分享</view>
 </view>
 <view class="shareNotes-body">
-  <mp-form models="{{shareNotesData}}">
+  <mp-form>
     <van-cell center title="图片" >
       <van-button  icon="add-o" type="primary" bindtap="GetPicture"/>
     </van-cell>
