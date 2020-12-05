@@ -3,15 +3,11 @@
 </view>
 <view class="shareNotes-body">
   <mp-form models="{{shareNotesData}}">
-    <mp-cell prop="图片" title="图片" ext-class="">
-      <button bindtap="GetPicture" >照片</button>
-    </mp-cell>
-    <mp-cell prop="标题" title="笔记标题" ext-class="">
-      <input bindinput="ShareNotesFormInputChange" data-field="noteTitle" class="weui-input" placeholder="笔记标题"/>
-    </mp-cell>
-    <mp-cell prop="笔记说明" title="笔记说明" ext-class="">
-      <input bindinput="ShareNotesFormInputChange" data-field="noteContent" class="weui-input" placeholder="笔记说明"/>
-    </mp-cell>
+    <van-cell center title="图片" >
+      <van-button  icon="add-o" type="primary" bindtap="GetPicture"/>
+    </van-cell>
+    <van-field model:value="{{noteTitle}}" placeholder="笔记标题" label="笔记标题"/>
+    <van-field model:value="{{noteContent}}" placeholder="笔记说明" label="笔记说明"/>
   </mp-form>
   <view class="weui-btn-area">
     <button class="weui-btn" type="primary" bindtap="SubmitShareNotes">确定</button>
