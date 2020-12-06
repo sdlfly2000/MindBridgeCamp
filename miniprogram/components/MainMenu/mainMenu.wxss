@@ -16,7 +16,7 @@
 
 .menu-image {
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .menu-title {

@@ -1,11 +1,14 @@
 <swiper indicator-dots="true" autoplay="true">
   <swiper-item>
-    <view class="swipeItem1">动态1</view>
-  </swiper-item>
-  <swiper-item>
-    <view class="swipeItem2">动态2</view>
-  </swiper-item>
-  <swiper-item>
-    <view class="swipeItem3">动态3</view>
+    <view class="swiper-item-container">
+      <view class="swiper-item-image-container">
+        <image class="swiper-item-image" mode="aspectFit" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Y5NLpnAj4CpG565SXVsZYVsebB6HDRUMoia1fIAEQ30fdTcYm1MiaY3gG6ESOayTcQLptCiaKj2hVmFQ3QKQngy2Q/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></image>
+      </view>
+      <view class="swiper-item-content">
+        <view class="swiper-item-title">
+          <text>蓝天救援队进入上大校园交流互动！你确定不来瞧瞧?</text>
+        </view>
+      </view>
+    </view>
   </swiper-item>
 </swiper>
