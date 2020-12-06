@@ -1,3 +1,7 @@
 van-radio {
   margin: 10rpx;
 }
+
+.button-area {
+  margin: 20rpx;
+}

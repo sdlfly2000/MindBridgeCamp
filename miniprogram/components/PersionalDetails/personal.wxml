@@ -39,3 +39,6 @@
     </view> 
   </van-cell-group>
 </mp-form>
+<view class="button-area">
+  <van-button type="primary" block>确认</van-button>
+</view>
