@@ -1,0 +1,14 @@
+.invitations-container {
+  height: 90%;
+}
+
+.invitation-item {
+  margin: 20rpx !important;
+  border: 1rpx solid rgb(213, 213, 213);
+}
+
+.invitation-title {
+  color: darkred !important;
+  font-size: larger !important;
+  font-weight: bolder !important;
+}

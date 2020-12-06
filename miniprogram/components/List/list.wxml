@@ -1,7 +1,7 @@
-<van-skeleton title avatar row="3" />
-<van-divider />
-<van-skeleton title avatar row="3" />
-<van-divider />
-<van-skeleton title avatar row="3" />
-<van-divider />
-<van-skeleton title avatar row="3" />
+<view class="invitations-container">
+  <van-card custom-class="invitation-item" title-class="invitation-title" wx:for="{{Invitations}}" wx:key="index" desc="{{item.Description}}" title="{{item.Title}}">
+    <view slot="footer">
+      <Text>参与人数： {{item.CountParticipant}}</Text>
+    </view>
+  </van-card>
+</view>
