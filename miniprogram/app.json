@@ -7,7 +7,7 @@
     "pages/hall/hall",
     "pages/pair/pair",
     "components/calc/calc",
-    "components/LastestSection/latest",
+    "components/LatestSection/latest",
     "components/NewsSection/news",
     "components/MainMenu/mainMenu",
     "components/Invitation/invitation",

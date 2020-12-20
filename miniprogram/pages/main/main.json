@@ -1,8 +1,9 @@
 {
   "usingComponents": {
-    "latestSection": "../../components/LastestSection/latest",
+    "latestSection": "../../components/LatestSection/latest",
     "newsSection": "../../components/NewsSection/news",
     "mainMenu": "../../components/MainMenu/mainMenu",
-    "invitation": "../../components/Invitation/invitation"
+    "invitation": "../../components/Invitation/invitation",
+    "van-sticky": "@vant/weapp/sticky/index"
   }  
 }

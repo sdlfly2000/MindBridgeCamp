@@ -1,6 +1,9 @@
 <view class="head-section">
-  <newsSection></newsSection>
+  <image mode="right" src="../../image/library.jpg" class="head-section-background-image" />
+  <van-sticky class="main-menu-container">
+    <mainMenu class="main-menu"></mainMenu>
+  </van-sticky> 
 </view>
 <view class="func-section">
-  <mainMenu></mainMenu>
+  <latestSection></latestSection>
 </view>

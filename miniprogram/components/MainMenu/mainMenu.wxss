@@ -1,33 +1,5 @@
-.menu-section {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  vertical-align: center;
-  justify-content: center;
-}
-
-.menu-container {
-  position: relative;
-  width: 100%;
-  height: 33%;
-  overflow: hidden;
-}
-
-.menu-image {
-  width: 100%;
-  opacity: 0.3;
-}
-
-.menu-title {
-  position: absolute;
-  margin: auto;
-  left: 0;
-  top: 45%;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  font-weight: bolder;
-  font-size: x-large;
-  color: rgb(0, 40, 78);
+.action-menu {
+  border-radius: 20rpx;
+  margin-bottom: 50rpx;
+  color: #B94F0E;
 }

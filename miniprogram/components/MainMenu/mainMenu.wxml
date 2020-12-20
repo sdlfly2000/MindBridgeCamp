@@ -1,14 +1,5 @@
-<view class="menu-section">
-  <view class="menu-container" bindtap="NavigateToInvitation">
-    <image class="menu-image" mode="aspectFill" src="../../image/LibStudyHall.jpg" /> 
-    <text class="menu-title">发起邀约</text>
-  </view>
-  <view class="menu-container" bindtap="NavigateToShareNotes">
-    <image class="menu-image" mode="aspectFill" src="../../image/note.png" /> 
-    <text class="menu-title">笔记分享</text>
-  </view>
-  <view class="menu-container" bindtap="NavigateToExchange">
-    <image class="menu-image" mode="aspectFill" src="../../image/exchange.png" /> 
-    <text class="menu-title">物品交换</text>
-  </view>
-</view>
+<van-grid column-num="3" border="{{false}}" custom-class="action-menu">
+  <van-grid-item name="invitation" icon="friends-o" text="发起邀约" url="/components/Invitation/invitation" custom-class="item-menu"/>
+  <van-grid-item name="noteShare" icon="like-o" text="笔记分享" url="/components/ShareNotes/shareNotes" custom-class="item-menu"/>
+  <van-grid-item name="exchange" icon="gift-o" text="物品交换" url="/components/Exchange/exchange" custom-class="item-menu"/>
+</van-grid>
