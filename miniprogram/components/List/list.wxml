@@ -1,7 +1,13 @@
 <view class="invitations-container">
-  <van-card custom-class="invitation-item" title-class="invitation-title" wx:for="{{Invitations}}" wx:key="index" desc="{{item.Description}}" title="{{item.Title}}">
+  <van-card custom-class="invitation-item" title-class="invitation-title" wx:for="{{Invitations}}" wx:key="index" desc="{{item.LearningContent}}" title="{{item.Title}}">
+    <view slot="price-top">
+      <text>开始时间： {{item.StartDate}}</text>
+    </view> 
+    <view slot="bottom">
+      <text>结束时间： {{item.EndDate}}</text>
+    </view>       
     <view slot="footer">
-      <Text>参与人数： {{item.CountParticipant}}</Text>
+      <Text>参与人数： {{item.ParticipantCount}}</Text>
     </view>
   </van-card>
 </view>
