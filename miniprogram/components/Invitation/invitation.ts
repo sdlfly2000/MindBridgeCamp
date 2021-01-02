@@ -1,21 +1,21 @@
-import { invitationService } from "./invitationService";
-import { LearningRoomModel } from "./models/LearningRoomModel";
-import { FormatDate, FormatTime } from "../../utils/util";
+import { invitationService } from './invitationService';
+import { LearningRoomModel } from './models/LearningRoomModel';
+import { FormatDate, FormatTime } from '../../utils/util';
 
 Component({
   data:{
-    Title: "",
+    Title: '',
     ParticipantCount: 3,
-    LearningContent: "",
-    StartDate: "",
-    EndDate: "",
-    Place: "",
+    LearningContent: '',
+    StartDate: '',
+    EndDate: '',
+    Place: '',
     IsShowSelectDate: false,
     IsShowSelectTime: false,
     CurrentDateTime: 0,
-    BookingDate: "",
-    BookingHourStart: "",
-    BookingHourEnd: "",
+    BookingDate: '',
+    BookingHourStart: '',
+    BookingHourEnd: '',
     IsEndTime: false
   },
   pageLifetimes:{
@@ -55,7 +55,7 @@ Component({
       });
     },
     onSelectTime: function(e){
-      if(e.target.id == "idStartTime"){
+      if(e.target.id == 'idStartTime'){
         this.setData({
           IsShowSelectTime: true,
           IsEndTime: false
@@ -90,18 +90,18 @@ Component({
         Title: this.data.Title,
         ParticipantCount: this.data.ParticipantCount,
         LearningContent: this.data.LearningContent,
-        StartDate: this.data.StartDate,
-        EndDate: this.data.EndDate,
+        StartDate: [this.data.BookingDate, this.data.BookingHourStart].join('T'),
+        EndDate:  [this.data.BookingDate, this.data.BookingHourEnd].join('T'),
         Place: this.data.Place,
-        RoomId: "",
-        CreatedBy: "",
-        CreatedOn: (new Date(Date.now())).toDateString(),
+        RoomId: '',
+        CreatedBy: '',
+        CreatedOn: (new Date(Date.now())).toJSON(),
         CurrentParticipantCount: 1
       };
       invitationService.CreateInvitation(model).then(
         () => {
           wx.showModal({
-            title: "邀约生成",
+            title: '邀约生成',
             complete: function(){
               wx.navigateBack();
             }
