@@ -7,7 +7,7 @@
       <text>结束时间： {{item.EndDate}}</text>
     </view>       
     <view slot="footer">
-      <Text>参与人数： {{item.ParticipantCount}}</Text>
+      <Text>参与人数: {{item.CurrentParticipantCount}} / {{item.ParticipantCount}}</Text>
     </view>
   </van-card>
 </view>

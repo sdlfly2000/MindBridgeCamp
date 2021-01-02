@@ -2,6 +2,9 @@
   "component": true,
   "usingComponents": {
     "mp-form": "/miniprogram_npm/weui-miniprogram/form/form",
-    "van-field": "@vant/weapp/field/index"
+    "van-field": "@vant/weapp/field/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-button": "@vant/weapp/button/index"
   }
 }

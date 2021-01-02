@@ -7,7 +7,7 @@ export const formatTime = (date: Date) => {
   const second = date.getSeconds()
 
   return (
-    [year, month, day].map(formatNumber).join('/') +
+    [year, month, day].map(formatNumber).join('-') +
     ' ' +
     [hour, minute, second].map(formatNumber).join(':')
   )
@@ -16,6 +16,14 @@ export const formatTime = (date: Date) => {
 const formatNumber = (n: number) => {
   const s = n.toString()
   return s[1] ? s : '0' + s
+}
+
+export const FormatDate = function(date: Date){
+  return [date.getFullYear(), date.getMonth() + 1, date.getDate()].map(formatNumber).join('-');
+}
+
+export const FormatTime = function(date: Date){
+  return [date.getHours(), date.getMinutes()].map(formatNumber).join(':');
 }
 
 export const Login = function(app: IAppOption){

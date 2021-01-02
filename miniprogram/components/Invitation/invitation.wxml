@@ -4,12 +4,31 @@
 <view class="invitation-body">
   <mp-form>
     <van-field model:value="{{Title}}" placeholder="请输入名称" label="名称"/>
-    <van-field model:value="{{NumMember}}" placeholder="人数" label="人数"/>
-    <van-field model:value="{{Content}}" placeholder="自习内容" label="内容"/>
-    <van-field model:value="{{DateTime}}"  placeholder="自习时间" label="时间"/>
-    <van-field model:value="{{Place}}"  placeholder="自习地点" label="地点"/>
+    <van-field model:value="{{ParticipantCount}}" placeholder="人数" label="人数"/>
+    <van-field model:value="{{LearningContent}}" placeholder="自习内容" label="内容"/> 
+    <van-field model:value="{{Place}}" placeholder="自习地点" label="地点"/> 
+
+    <van-field model:value="{{BookingDate}}" placeholder="自习地点" label="日期" readonly="true" use-button-slot>
+      <van-button slot="button" size="small" type="info" bind:click="onSelectDate">日期选择</van-button>
+    </van-field> 
+    <van-field model:value="{{BookingHourStart}}" placeholder="开始时间" label="开始时间" readonly="true" use-button-slot>
+      <van-button slot="button" id="idStartTime" size="small" type="info" bind:click="onSelectTime">时间选择</van-button>
+    </van-field>
+    <van-field model:value="{{BookingHourEnd}}" placeholder="结束时间" label="结束时间" readonly="true" use-button-slot >
+      <van-button slot="button" id="idEndTime" size="small" type="info" bind:click="onSelectTime">时间选择</van-button>
+    </van-field>
+
   </mp-form>
   <view class="weui-btn-area">
     <button class="weui-btn" type="primary" bindtap="SubmitInvitation">确定</button>
   </view>
 </view>
+
+<van-popup show="{{IsShowSelectDate}}" position="top">
+  <van-datetime-picker type="date" value="{{CurrentDateTime}}" title="选择日期" bind:cancel="onCloseSelectDate" bind:confirm="onConfirmSelectDate"/>
+</van-popup>
+
+<van-popup show="{{IsShowSelectTime}}" position="top">
+  <van-datetime-picker type="time" title="选择时间" bind:cancel="onCloseSelectTime" bind:confirm="onConfirmSelectTime"/>
+</van-popup>
+

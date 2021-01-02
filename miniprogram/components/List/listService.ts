@@ -22,4 +22,4 @@ class ListService{
   }
 }
 
-export const listService = new ListService(app.globalData.baseUrlApp)
+export const listService = new ListService(app.globalData.baseUrlApp);
