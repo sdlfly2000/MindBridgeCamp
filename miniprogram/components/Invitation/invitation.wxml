@@ -9,13 +9,13 @@
     <van-field model:value="{{Place}}" placeholder="自习地点" label="地点"/> 
 
     <van-field model:value="{{BookingDate}}" placeholder="自习地点" label="日期" readonly="true" use-button-slot>
-      <van-button slot="button" size="small" type="info" bind:click="onSelectDate">日期选择</van-button>
+      <van-button slot="button" size="small" bind:click="onSelectDate">日期选择</van-button>
     </van-field> 
     <van-field model:value="{{BookingHourStart}}" placeholder="开始时间" label="开始时间" readonly="true" use-button-slot>
-      <van-button slot="button" id="idStartTime" size="small" type="info" bind:click="onSelectTime">时间选择</van-button>
+      <van-button slot="button" id="idStartTime" size="small" bind:click="onSelectTime">时间选择</van-button>
     </van-field>
     <van-field model:value="{{BookingHourEnd}}" placeholder="结束时间" label="结束时间" readonly="true" use-button-slot >
-      <van-button slot="button" id="idEndTime" size="small" type="info" bind:click="onSelectTime">时间选择</van-button>
+      <van-button slot="button" id="idEndTime" size="small" bind:click="onSelectTime">时间选择</van-button>
     </van-field>
 
   </mp-form>
