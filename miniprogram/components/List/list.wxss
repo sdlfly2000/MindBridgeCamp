@@ -13,3 +13,35 @@
   font-size: larger !important;
   font-weight: bolder !important;
 }
+
+.btn_join{
+  margin-left: 15rpx;
+}
+
+.invitation-detail-container{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 20rpx;
+  border-radius: 20rpx;
+}
+
+.invitation-detail-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font: bold;
+  font-size: large;
+  margin-top: 20rpx;
+}
+
+.invitation-detail-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.invitation-detail-button{
+  margin:10rpx;
+}
