@@ -34,7 +34,7 @@ Component({
     InvitationFormInputChange: function(e){
       let vField = e.currentTarget.dataset.field
       this.setData({
-          [`${vField}`]: e.detail
+          [`${vField}`]: e.detail.value
       })
     },
     onSelectDate: function(){
@@ -98,7 +98,6 @@ Component({
         CreatedOn: (new Date(Date.now())).toJSON(),
         CurrentParticipantCount: 1
       };
-      console.info(model);
       invitationService.CreateInvitation(model).then(
         () => {
           wx.showModal({

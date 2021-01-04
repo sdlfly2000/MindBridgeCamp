@@ -3,10 +3,10 @@
 </view>
 <view class="invitation-body">
   <mp-form>
-    <van-field model:value="{{Title}}" placeholder="请输入名称" label="名称" required data-field="Title" bind:change="InvitationFormInputChange"/>
+    <van-field model:value="{{Title}}" placeholder="请输入名称" label="名称" required data-field="Title" bind:blur="InvitationFormInputChange"/>
     <van-field model:value="{{ParticipantCount}}" type="idcard" placeholder="人数" label="人数" />
-    <van-field model:value="{{LearningContent}}" placeholder="自习内容" label="内容" /> 
-    <van-field model:value="{{Place}}" placeholder="自习地点" label="地点" />
+    <van-field model:value="{{LearningContent}}" placeholder="自习内容" label="内容" data-field="LearningContent" bind:blur="InvitationFormInputChange" /> 
+    <van-field model:value="{{Place}}" placeholder="自习地点" label="地点" data-field="Place" bind:blur="InvitationFormInputChange" />
     <van-field model:value="{{BookingDate}}" placeholder="自习地点" label="日期" readonly="true" use-button-slot>
       <van-button slot="button" size="small" bind:click="onSelectDate">日期选择</van-button>
     </van-field> 
