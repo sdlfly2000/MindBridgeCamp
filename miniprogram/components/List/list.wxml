@@ -1,5 +1,5 @@
 <view class="invitations-container">
-  <van-card custom-class="invitation-item" title-class="invitation-title" wx:for="{{Invitations}}" wx:key="index" desc="{{item.LearningContent}}" title="{{item.Title}}" bindtap="OpenInvitationDetail" data-roomid="{{item.RoomId}}">
+  <van-card custom-class="invitation-item" title-class="invitation-title" wx:for="{{Invitations}}" wx:key="index" desc="{{item.LearningContent}}" title="{{item.Title}}" >
     <view slot="price-top">
       <text>开始时间： {{item.StartDate}}</text>
     </view> 
@@ -9,6 +9,7 @@
     <view slot="footer">
       <Text>参与人数: {{item.CurrentParticipantCount}} / {{item.ParticipantCount}}</Text>
       <van-button custom-class="btn_join" data-roomid="{{item.RoomId}}" size="small" bind:click="JoinInvitation">加入</van-button>
+      <van-button custom-class="btn_join" data-roomid="{{item.RoomId}}" size="small" bind:click="OpenInvitationDetail">详情</van-button>
     </view>
   </van-card>
 </view>

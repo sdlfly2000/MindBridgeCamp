@@ -7,8 +7,22 @@ class ListService{
     this.BaseUrlApp = baseUrlApp;
   };
 
+  JoinRoom(roomId: string){
+    let vm = this;
+    return new Promise(
+      (resolve) => {
+        wx.request({
+          url: vm.BaseUrlApp + "LearningRoom/JoinRoom/" + this.GetLoginToken() + "/" + roomId,
+          success: function(res){
+            resolve(res);
+          }
+        });
+      }
+    );
+  }
+
   GetAvailableRooms(){
-    var vm = this;
+    let vm = this;
     return new Promise(
       (resolve) => {
         wx.request({
@@ -19,6 +33,10 @@ class ListService{
         });
       }
     );
+  }
+
+  private GetLoginToken(): string {
+    return wx.getStorageSync("LoginToken");
   }
 }
 

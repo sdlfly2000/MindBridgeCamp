@@ -27,6 +27,12 @@ Component({
     },
     JoinInvitation: function(e){
       console.info(e.currentTarget.dataset.roomid);
+      let roomId = e.currentTarget.dataset.roomid;
+      listService.JoinRoom(roomId).then(
+        (res) => {
+          console.info(res);
+        }
+      );
     },
     CloseInvitationDetail:function(){
       this.setData({
