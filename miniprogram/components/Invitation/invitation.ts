@@ -98,6 +98,7 @@ Component({
         CreatedOn: (new Date(Date.now())).toJSON(),
         CurrentParticipantCount: 1
       };
+      console.info(model);
       invitationService.CreateInvitation(model).then(
         () => {
           wx.showModal({

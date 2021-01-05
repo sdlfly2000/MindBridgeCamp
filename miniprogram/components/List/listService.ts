@@ -21,6 +21,20 @@ class ListService{
     );
   }
 
+  GetCreatorInfo(openId:string){
+    let vm = this;
+    return new Promise(
+      (resolve) => {
+        wx.request({
+          url: vm.BaseUrlApp + "User/Get/" + openId,
+          success: function(res){
+            resolve(res);
+          }
+        });
+      }
+    );
+  }
+
   GetAvailableRooms(){
     let vm = this;
     return new Promise(

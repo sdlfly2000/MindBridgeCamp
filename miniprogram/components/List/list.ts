@@ -19,18 +19,32 @@ Component({
   methods:{
     OpenInvitationDetail: function(e){
       let roomId = e.currentTarget.dataset.roomid;
-      let roomModel = this.data.Invitations.find((invitation:any) => invitation.RoomId == roomId);
+      let roomModel:any = this.data.Invitations.find((invitation:any) => invitation.RoomId == roomId);
       this.setData({
         IsShowInvitationDetail: true,
         InvitationShown: roomModel
       });
+      listService.GetCreatorInfo(roomModel.CreatedBy).then(
+        (res: any) => {
+          let invitationShown: any = this.data.InvitationShown;
+          invitationShown.Created = res.data.Name;
+          this.setData({
+            InvitationShown: invitationShown
+          });
+        }
+      );
     },
     JoinInvitation: function(e){
-      console.info(e.currentTarget.dataset.roomid);
       let roomId = e.currentTarget.dataset.roomid;
       listService.JoinRoom(roomId).then(
-        (res) => {
-          console.info(res);
+        (res:any) => {
+          let invitation = res.data[0];
+          let invitations: any = this.data.Invitations;
+          var invitationIndex = invitations.findIndex((i:any) => i.RoomId == invitation.RoomId);
+          invitations[invitationIndex] = invitation;
+          this.setData({
+            Invitations: invitations
+          });
         }
       );
     },
