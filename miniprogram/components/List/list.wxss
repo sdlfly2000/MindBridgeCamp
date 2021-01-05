@@ -1,5 +1,6 @@
 .invitations-container {
   height: 90%;
+  overflow: scroll;
 }
 
 .invitation-item {
