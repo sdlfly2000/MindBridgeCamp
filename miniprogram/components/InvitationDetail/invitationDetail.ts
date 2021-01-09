@@ -8,7 +8,7 @@ Component({
   lifetimes:{
     ready: function(){
       let vm = this;
-      const eventChannel = this.getOpenerEventChannel();
+      const eventChannel = this.getEventChannel();
       eventChannel.on("InvitationDetailRoomModel", function(data:any){
         let roomModel = data.RoomModel;
         invitationDetailService.GetCreatorInfo(roomModel.CreatedBy).then(
@@ -21,11 +21,39 @@ Component({
           }
         ).catch((e) => console.error(e));
         invitationDetailService.GetParticipants(roomModel.RoomId)
-        .then((res:any) => vm.setData({
-          ParticipantsShown: res.data
-        }))
-        .catch((err) => console.error(err));
+        .then(
+          (res:any) => {
+            let participants:[] = res.data;
+            participants.forEach(
+              (p:any) => {
+                if(p.Gender == 0){
+                  p.GenderClass="participant-boy";
+                }else{
+                  p.GenderClass="participant-girl";
+                } 
+            });
+            vm.setData({
+              ParticipantsShown: participants
+            });
+          }
+        ).catch((err) => console.error(err));
       });
+    }
+  },
+  methods:{
+    JoinInvitation: function(e){
+      let roomId = e.currentTarget.dataset.roomid;
+      invitationDetailService.JoinRoom(roomId).then(
+        () => {
+          wx.navigateBack();
+        }
+      );
+    },
+    CloseInvitationDetail:function(){
+      wx.navigateBack();
+    },
+    getEventChannel(){
+      return this.getOpenerEventChannel();
     }
   }
 })

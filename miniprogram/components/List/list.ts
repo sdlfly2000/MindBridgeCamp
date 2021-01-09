@@ -30,28 +30,6 @@ Component({
       });
     },
 
-    OpenInvitationDetail: function(e){
-      let roomId = e.currentTarget.dataset.roomid;
-      let roomModel:any = this.data.Invitations.find((invitation:any) => invitation.RoomId == roomId);
-      this.setData({
-        IsShowInvitationDetail: true,
-        InvitationShown: roomModel
-      });
-      listService.GetCreatorInfo(roomModel.CreatedBy).then(
-        (res: any) => {
-          let invitationShown: any = this.data.InvitationShown;
-          invitationShown.Created = res.data.Name;
-          this.setData({
-            InvitationShown: invitationShown
-          });
-        }
-      );
-      listService.GetParticipants(roomId)
-        .then((res:any) => this.setData({
-          ParticipantsShown: res.data
-        }))
-        .catch((err) => console.info(err));
-    },
     JoinInvitation: function(e){
       let roomId = e.currentTarget.dataset.roomid;
       listService.JoinRoom(roomId).then(
@@ -65,11 +43,6 @@ Component({
           });
         }
       );
-    },
-    CloseInvitationDetail:function(){
-      this.setData({
-        IsShowInvitationDetail: false
-      });
     }
   }
 })

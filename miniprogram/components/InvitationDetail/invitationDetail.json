@@ -5,6 +5,7 @@
     "van-overlay": "@vant/weapp/overlay/index",
     "van-field": "@vant/weapp/field/index",
     "van-grid": "@vant/weapp/grid/index",
-    "van-grid-item": "@vant/weapp/grid-item/index"
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-cell": "@vant/weapp/cell/index"
   }
 }

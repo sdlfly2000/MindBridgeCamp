@@ -36,3 +36,11 @@
 .invitation-detail-button{
   margin:10rpx;
 }
+
+.participant-girl{
+  color: red;
+}
+
+.participant-boy{
+  color: #46b0f1;
+}

@@ -7,7 +7,7 @@ class ListService{
     this.BaseUrlApp = baseUrlApp;
   };
 
-  JoinRoom(roomId: string){
+  public JoinRoom(roomId: string){
     let vm = this;
     return new Promise(
       (resolve) => {
@@ -21,21 +21,7 @@ class ListService{
     );
   }
 
-  GetCreatorInfo(openId:string){
-    let vm = this;
-    return new Promise(
-      (resolve) => {
-        wx.request({
-          url: vm.BaseUrlApp + "User/Get/" + openId,
-          success: function(res){
-            resolve(res);
-          }
-        });
-      }
-    );
-  }
-
-  GetAvailableRooms(){
+  public GetAvailableRooms(){
     let vm = this;
     return new Promise(
       (resolve) => {
@@ -43,23 +29,6 @@ class ListService{
           url: vm.BaseUrlApp +  "LearningRoom/GetAvailableRooms",
           success: function(res){
             resolve(res);
-          }
-        });
-      }
-    );
-  }
-
-  GetParticipants(roomId:string){
-    let vm = this;
-    return new Promise(
-      (resolve, error) => {
-        wx.request({
-          url: vm.BaseUrlApp + "LearningRoom/GetParticipants/" + roomId,
-          success: function(res){
-            resolve(res);
-          },
-          fail: function(err){
-            error(err);
           }
         });
       }
