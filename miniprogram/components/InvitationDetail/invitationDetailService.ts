@@ -1,13 +1,12 @@
-
 var app = getApp<IAppOption>();
 
-class ListService{
+class InvitationDetailService{
   BaseUrlApp: string = "";
   constructor(baseUrlApp: string){
     this.BaseUrlApp = baseUrlApp;
-  };
+  }
 
-  JoinRoom(roomId: string){
+  public JoinRoom(roomId: string){
     let vm = this;
     return new Promise(
       (resolve) => {
@@ -21,35 +20,24 @@ class ListService{
     );
   }
 
-  GetCreatorInfo(openId:string){
+  public GetCreatorInfo(openId:string){
     let vm = this;
     return new Promise(
-      (resolve) => {
+      (resolve, error) => {
         wx.request({
           url: vm.BaseUrlApp + "User/Get/" + openId,
           success: function(res){
             resolve(res);
+          },
+          fail: function(e){
+            error(e);
           }
         });
       }
     );
   }
 
-  GetAvailableRooms(){
-    let vm = this;
-    return new Promise(
-      (resolve) => {
-        wx.request({
-          url: vm.BaseUrlApp +  "LearningRoom/GetAvailableRooms",
-          success: function(res){
-            resolve(res);
-          }
-        });
-      }
-    );
-  }
-
-  GetParticipants(roomId:string){
+  public GetParticipants(roomId:string){
     let vm = this;
     return new Promise(
       (resolve, error) => {
@@ -71,4 +59,4 @@ class ListService{
   }
 }
 
-export const listService = new ListService(app.globalData.baseUrlApp);
+export const invitationDetailService = new InvitationDetailService(app.globalData.baseUrlApp)

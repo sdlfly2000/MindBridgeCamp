@@ -29,4 +29,3 @@
 <van-popup show="{{IsShowSelectTime}}" position="top">
   <van-datetime-picker type="time" title="选择时间" bind:cancel="onCloseSelectTime" bind:confirm="onConfirmSelectTime"/>
 </van-popup>
-

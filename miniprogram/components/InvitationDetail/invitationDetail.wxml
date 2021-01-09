@@ -1,20 +1,4 @@
-<view class="invitations-container">
-  <van-card custom-class="invitation-item" title-class="invitation-title" wx:for="{{Invitations}}" wx:key="index" desc="{{item.LearningContent}}" title="{{item.Title}}" >
-    <view slot="price-top">
-      <text>开始时间： {{item.StartDate}}</text>
-    </view> 
-    <view slot="bottom">
-      <text>结束时间： {{item.EndDate}}</text>
-    </view>       
-    <view slot="footer">
-      <Text>参与人数: {{item.CurrentParticipantCount}} / {{item.ParticipantCount}}</Text>
-      <van-button custom-class="btn_join" data-roomid="{{item.RoomId}}" size="small" bind:click="JoinInvitation">加入</van-button>
-      <van-button custom-class="btn_join" data-roomid="{{item.RoomId}}" size="small" bind:click="NavigateToDetails">详情</van-button>
-    </view>
-  </van-card>
-</view>
-
-<van-overlay show="{{IsShowInvitationDetail}}" bind:click="CloseInvitationDetail" class="invitation-detail-overlay">
+<view show="{{IsShowInvitationDetail}}" bind:click="CloseInvitationDetail" class="invitation-detail-overlay">
   <view class="invitation-detail-container">
     <view class="invitation-detail-title"><text>邀约详情</text></view>
     <van-field readonly="true" label="名称" value="{{InvitationShown.Title}}"></van-field>
@@ -32,4 +16,4 @@
       <van-button custom-class="invitation-detail-button" hairline plain type="info" bind:click="CloseInvitationDetail">取消</van-button>        
     </view>
   </view>
-</van-overlay>
+</view>

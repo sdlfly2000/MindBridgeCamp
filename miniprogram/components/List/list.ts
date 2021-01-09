@@ -4,7 +4,8 @@ Component({
   data:{
     Invitations: [],
     IsShowInvitationDetail: false,
-    InvitationShown: {}
+    InvitationShown: {},
+    ParticipantsShown: []
   },
   pageLifetimes:{
     show: function(){
@@ -17,6 +18,18 @@ Component({
     }
   },
   methods:{
+    NavigateToDetails: function(e){
+      let roomId = e.currentTarget.dataset.roomid;
+      let roomModel:any = this.data.Invitations.find((invitation:any) => invitation.RoomId == roomId);
+
+      wx.navigateTo({
+        url: "/components/InvitationDetail/invitationDetail",
+        success: function(res){
+          res.eventChannel.emit("InvitationDetailRoomModel", {RoomModel: roomModel})
+        }
+      });
+    },
+
     OpenInvitationDetail: function(e){
       let roomId = e.currentTarget.dataset.roomid;
       let roomModel:any = this.data.Invitations.find((invitation:any) => invitation.RoomId == roomId);
@@ -33,6 +46,11 @@ Component({
           });
         }
       );
+      listService.GetParticipants(roomId)
+        .then((res:any) => this.setData({
+          ParticipantsShown: res.data
+        }))
+        .catch((err) => console.info(err));
     },
     JoinInvitation: function(e){
       let roomId = e.currentTarget.dataset.roomid;

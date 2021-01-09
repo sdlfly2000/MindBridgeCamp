@@ -12,7 +12,8 @@
     "components/MainMenu/mainMenu",
     "components/Invitation/invitation",
     "components/ShareNotes/shareNotes",
-    "components/Exchange/exchange"
+    "components/Exchange/exchange",
+    "components/InvitationDetail/invitationDetail"
   ],
   "tabBar": {
     "custom": true,
