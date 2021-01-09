@@ -1,4 +1,6 @@
 
+import { webClient } from "../../utils/util";
+
 var app = getApp<IAppOption>();
 
 class ListService{
@@ -19,6 +21,12 @@ class ListService{
         });
       }
     );
+  }
+
+  public GetRoomsParticipated() {
+    let vm = this;
+    let url = vm.BaseUrlApp + "LearningRoom/GetRoomsParticipated/" + this.GetLoginToken();
+    return webClient(url);
   }
 
   public GetAvailableRooms(){

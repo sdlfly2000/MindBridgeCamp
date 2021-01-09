@@ -26,6 +26,24 @@ export const FormatTime = function(date: Date){
   return [date.getHours(), date.getMinutes()].map(formatNumber).join(':');
 }
 
+export const webClient = function(url: string, httpMethod?: any, requestData?: any){
+  return new Promise(
+    (resolve, error) => {
+      wx.request({
+        url: url,
+        method: httpMethod,
+        data: requestData,
+        success: function(res){
+          resolve(res);
+        },
+        fail: function(e){
+          error(e);
+        }
+      });
+    }
+  );
+}
+
 export const Login = function(app: IAppOption){
   wx.login({
     success: res => {

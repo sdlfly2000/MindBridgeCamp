@@ -5,5 +5,5 @@
   </van-sticky> 
 </view>
 <view class="func-section">
-  <latestSection></latestSection>
+  <invitation-join></invitation-join>
 </view>

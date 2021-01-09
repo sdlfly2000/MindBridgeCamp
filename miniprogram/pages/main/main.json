@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "latestSection": "../../components/LatestSection/latest",
+    "invitation-join": "../../components/List/list",
     "newsSection": "../../components/NewsSection/news",
     "mainMenu": "../../components/MainMenu/mainMenu",
     "invitation": "../../components/Invitation/invitation",

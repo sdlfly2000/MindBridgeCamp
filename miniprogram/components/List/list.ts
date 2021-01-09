@@ -3,18 +3,27 @@ import { listService } from "./listService";
 Component({
   data:{
     Invitations: [],
-    IsShowInvitationDetail: false,
-    InvitationShown: {},
-    ParticipantsShown: []
   },
   pageLifetimes:{
     show: function(){
-      listService.GetAvailableRooms().then(
-        (res: any) => {
-          this.setData({
-            Invitations: res.data
-        })
-      });
+      let pagesLength = getCurrentPages().length;
+      let route = getCurrentPages()[pagesLength-1].route;
+      let pageName = route.split("/").pop();
+      if(pageName == "main"){
+        listService.GetRoomsParticipated().then(
+          (res: any) => {
+            this.setData({
+              Invitations: res.data
+          })}
+        ).catch((e) => console.error(e));
+      }else if(pageName == "hall"){
+        listService.GetAvailableRooms().then(
+          (res: any) => {          
+            this.setData({
+              Invitations: res.data
+          })
+        });
+      }
     }
   },
   methods:{
