@@ -11,10 +11,13 @@ Component({
   pageLifetimes:{
     show: function(){
       IsLoginTokenValid(app)
-      .then(() => this.setData({
-        isLoginTokenValid: true
-      }))
-      .catch(() => {
+      .then((res) => {
+        console.debug(res);
+        this.setData({
+          isLoginTokenValid: true
+        })})
+      .catch((res) => {
+        console.debug(res);
         this.setData({
           isLoginTokenValid: false
         })
@@ -24,9 +27,11 @@ Component({
   observers:{
     'isLoginTokenValid': function(isLoginTokenValid:boolean){
       if(!isLoginTokenValid){
-        Login(app).then(() => this.setData({
-          isLoginTokenValid: true
-        }));
+        Login(app).then((res) => {
+          console.debug(res);
+          this.setData({
+            isLoginTokenValid: true
+          })});
       }else{
         let pageName = this.GetCurrentPageName();
         if(pageName == "main"){
@@ -35,7 +40,7 @@ Component({
               this.setData({
                 Invitations: res.data
             })}
-          ).catch((e) => console.error(e));
+          ).catch((res) => console.error(res));
         }else if(pageName == "hall"){
           listService.GetAvailableRooms().then(
             (res: any) => {          

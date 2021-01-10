@@ -34,10 +34,14 @@ export const webClient = function(url: string, httpMethod?: any, requestData?: a
         method: httpMethod,
         data: requestData,
         success: function(res){
-          resolve(res);
+          if(res.statusCode == 200){
+            resolve(res);            
+          }else{
+            error(res);
+          }
         },
         fail: function(e){
-          error(e);
+          console.error(e);
         }
       });
     }
@@ -51,10 +55,14 @@ export const IsLoginTokenValid = function(app: IAppOption){
       wx.request({
         url: app.globalData.baseUrlAuth + "WeixinLogin/IsLoginTokenValid/" + loginToken,
         success: function(res){
-          resolve(res);
+          if(res.statusCode == 200){
+            resolve(res);            
+          }else{
+            error(res);
+          }
         },
         fail: function(e){
-          error(e);
+          console.error(e);
         }
       });
     }
