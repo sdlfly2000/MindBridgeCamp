@@ -15,6 +15,11 @@ App<IAppOption>({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    Login(this)
+    let loginToken = wx.getStorageSync("LoginToken");
+    if(loginToken == undefined || loginToken == ""){
+      Login(this);
+    }else{
+      console.log("Login Token: " + loginToken);
+    }
   }
 })

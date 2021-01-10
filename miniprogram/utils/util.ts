@@ -47,7 +47,7 @@ export const webClient = function(url: string, httpMethod?: any, requestData?: a
 export const Login = function(app: IAppOption){
   wx.login({
     success: res => {
-      console.log("Login Code: " + res.code)
+      console.info("Login Code: " + res.code);      
       wx.request({
         url: app.globalData.baseUrlAuth + "WeixinLogin/GetToken",
         data:{
@@ -58,10 +58,10 @@ export const Login = function(app: IAppOption){
           'content-type': 'application/json'
         },
         method: 'POST',
-        success: function(response){
-          console.log("Login Token: " + response.data)
+        success: function(response){          
           if(response.data != undefined){
             wx.setStorageSync('LoginToken', response.data)
+            console.info("Login Token: " + response.data); 
           }
         }
       })
