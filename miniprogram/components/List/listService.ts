@@ -43,7 +43,7 @@ class ListService{
     );
   }
 
-  private GetLoginToken(): string {
+  private GetLoginToken(): string {    
     return wx.getStorageSync("LoginToken");
   }
 }

@@ -44,27 +44,49 @@ export const webClient = function(url: string, httpMethod?: any, requestData?: a
   );
 }
 
-export const Login = function(app: IAppOption){
-  wx.login({
-    success: res => {
-      console.info("Login Code: " + res.code);      
+export const IsLoginTokenValid = function(app: IAppOption){
+  let loginToken:string = wx.getStorageSync("LoginToken");
+  return new Promise(
+    (resolve, error) => {
       wx.request({
-        url: app.globalData.baseUrlAuth + "WeixinLogin/GetToken",
-        data:{
-          LoginCode: res.code,
-          AppName: app.globalData.appName
+        url: app.globalData.baseUrlAuth + "WeixinLogin/IsLoginTokenValid/" + loginToken,
+        success: function(res){
+          resolve(res);
         },
-        header: {
-          'content-type': 'application/json'
-        },
-        method: 'POST',
-        success: function(response){          
-          if(response.data != undefined){
-            wx.setStorageSync('LoginToken', response.data)
-            console.info("Login Token: " + response.data); 
-          }
+        fail: function(e){
+          error(e);
         }
-      })
-    },
-  }) 
+      });
+    }
+  );
+}
+
+export const Login = function(app: IAppOption){
+  return new Promise(
+    (resolve) => {
+      wx.login({
+        success: res => {
+          console.info("Login Code: " + res.code);      
+          wx.request({
+            url: app.globalData.baseUrlAuth + "WeixinLogin/GetToken",
+            data:{
+              LoginCode: res.code,
+              AppName: app.globalData.appName
+            },
+            header: {
+              'content-type': 'application/json'
+            },
+            method: 'POST',
+            success: function(response){          
+              if(response.data != undefined){
+                wx.setStorageSync('LoginToken', response.data)
+                console.info("Login Token: " + response.data); 
+                resolve(response);
+              }
+            }
+          })
+        },
+      }) 
+    }
+  ) 
 }

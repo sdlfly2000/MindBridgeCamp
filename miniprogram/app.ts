@@ -1,5 +1,5 @@
 // app.ts
-import { Login } from "./utils/util"
+// import { Login } from "./utils/util"
 
 App<IAppOption>({
   globalData: {
@@ -15,11 +15,6 @@ App<IAppOption>({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    let loginToken = wx.getStorageSync("LoginToken");
-    if(loginToken == undefined || loginToken == ""){
-      Login(this);
-    }else{
-      console.log("Login Token: " + loginToken);
-    }
+    // Login(this);
   }
 })

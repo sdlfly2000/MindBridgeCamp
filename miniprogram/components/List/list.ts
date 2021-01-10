@@ -1,28 +1,49 @@
+import { IsLoginTokenValid, Login } from "../../utils/util";
 import { listService } from "./listService";
+
+var app = getApp<IAppOption>()
 
 Component({
   data:{
     Invitations: [],
+    isLoginTokenValid: false
   },
   pageLifetimes:{
     show: function(){
-      let pagesLength = getCurrentPages().length;
-      let route = getCurrentPages()[pagesLength-1].route;
-      let pageName = route.split("/").pop();
-      if(pageName == "main"){
-        listService.GetRoomsParticipated().then(
-          (res: any) => {
-            this.setData({
-              Invitations: res.data
-          })}
-        ).catch((e) => console.error(e));
-      }else if(pageName == "hall"){
-        listService.GetAvailableRooms().then(
-          (res: any) => {          
-            this.setData({
-              Invitations: res.data
-          })
-        });
+      IsLoginTokenValid(app)
+      .then(() => this.setData({
+        isLoginTokenValid: true
+      }))
+      .catch(() => {
+        this.setData({
+          isLoginTokenValid: false
+        })
+      })
+    }
+  },
+  observers:{
+    'isLoginTokenValid': function(isLoginTokenValid:boolean){
+      if(!isLoginTokenValid){
+        Login(app).then(() => this.setData({
+          isLoginTokenValid: true
+        }));
+      }else{
+        let pageName = this.GetCurrentPageName();
+        if(pageName == "main"){
+          listService.GetRoomsParticipated().then(
+            (res: any) => {
+              this.setData({
+                Invitations: res.data
+            })}
+          ).catch((e) => console.error(e));
+        }else if(pageName == "hall"){
+          listService.GetAvailableRooms().then(
+            (res: any) => {          
+              this.setData({
+                Invitations: res.data
+            })
+          });
+        }
       }
     }
   },
@@ -52,6 +73,12 @@ Component({
           });
         }
       );
+    },
+
+    GetCurrentPageName(){
+      let pagesLength = getCurrentPages().length;
+      let route = getCurrentPages()[pagesLength-1].route;
+      return route.split("/").pop();
     }
   }
 })
