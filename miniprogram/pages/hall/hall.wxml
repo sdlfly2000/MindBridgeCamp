@@ -1,1 +1,3 @@
-<list></list>
+<view class="room-container">
+  <list></list>
+</view>
