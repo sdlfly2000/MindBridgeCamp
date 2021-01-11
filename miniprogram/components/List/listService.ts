@@ -23,6 +23,27 @@ class ListService{
     );
   }
 
+  public SignInRoom(roomId: string){
+    let vm = this;
+    return new Promise(
+      (resolve, error) => {
+        wx.request({
+          url: vm.BaseUrlApp + "LearningRoom/SignInRoom/" + this.GetLoginToken() + "/" + roomId,
+          success: function(res){
+            if(res.statusCode == 200){
+              resolve(res);
+            }else{
+              error(res);
+            }
+          },
+          fail: function(e){
+            console.error(e);
+          }
+        });
+      }
+    );
+  }
+
   public GetRoomsParticipated() {
     let vm = this;
     let url = vm.BaseUrlApp + "LearningRoom/GetRoomsParticipated/" + this.GetLoginToken();

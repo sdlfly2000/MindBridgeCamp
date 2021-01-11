@@ -38,7 +38,7 @@ Component({
           listService.GetRoomsParticipated().then(
             (res: any) => {
               this.setData({
-                Invitations: res.data
+                Invitations: this.SetParticipatedRoomStatus(res.data)
             })}
           ).catch((res) => console.error(res));
         }else if(pageName == "hall"){
@@ -56,7 +56,6 @@ Component({
     NavigateToDetails: function(e){
       let roomId = e.currentTarget.dataset.roomid;
       let roomModel:any = this.data.Invitations.find((invitation:any) => invitation.RoomId == roomId);
-
       wx.navigateTo({
         url: "/components/InvitationDetail/invitationDetail",
         success: function(res){
@@ -71,13 +70,45 @@ Component({
         (res:any) => {
           let invitation = res.data[0];
           let invitations: any = this.data.Invitations;
-          var invitationIndex = invitations.findIndex((i:any) => i.RoomId == invitation.RoomId);
+          let invitationIndex = invitations.findIndex((i:any) => i.RoomId == invitation.RoomId);
           invitations[invitationIndex] = invitation;
           this.setData({
             Invitations: invitations
           });
         }
       );
+    },
+
+    SignInInvitation: function(e){
+      let roomId = e.currentTarget.dataset.roomid;
+      listService.SignInRoom(roomId)
+        .then(() => {
+          let invitations:any = this.data.Invitations;
+          let invitationIndex = invitations.findIndex((i:any) => i.RoomId == roomId);
+          invitations[invitationIndex].IsSignIn = true;
+
+          this.setData({
+            Invitations: invitations
+          });
+        })
+        .catch((res) => console.error(res.errMsg));
+    },
+
+    SetParticipatedRoomStatus(rooms: []){
+      let currentDateTime: Date = new Date();
+      rooms.forEach((room:any) =>{
+        let startDate:Date = new Date(room.StartDate);
+        let endDate:Date = new Date(room.EndDate);
+        if(currentDateTime < startDate){
+          room.Status = "NotStart"
+        }else if(currentDateTime > startDate && currentDateTime < endDate){
+          room.Status = "InProcess"
+        }else{
+          room.Status = "Over"
+        };
+        room.Participated = true;        
+      });
+      return rooms;
     },
 
     GetCurrentPageName(){
