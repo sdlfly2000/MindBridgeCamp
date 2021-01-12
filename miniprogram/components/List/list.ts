@@ -11,13 +11,11 @@ Component({
   pageLifetimes:{
     show: function(){
       IsLoginTokenValid(app)
-      .then((res) => {
-        console.debug(res);
+      .then(() => {
         this.setData({
           isLoginTokenValid: true
         })})
-      .catch((res) => {
-        console.debug(res);
+      .catch(() => {
         this.setData({
           isLoginTokenValid: false
         })
