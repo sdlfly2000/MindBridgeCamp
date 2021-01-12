@@ -1,6 +1,6 @@
 import { invitationService } from './invitationService';
 import { LearningRoomModel } from './models/LearningRoomModel';
-import { FormatDate, FormatTime } from '../../utils/util';
+import { FormatDate, FormatTime, formatTime } from '../../utils/util';
 
 Component({
   data:{
@@ -95,7 +95,7 @@ Component({
         Place: this.data.Place,
         RoomId: '',
         CreatedBy: '',
-        CreatedOn: (new Date(Date.now())).toJSON(),
+        CreatedOn: formatTime(new Date(Date.now())),
         CurrentParticipantCount: 1
       };
       console.info(model);

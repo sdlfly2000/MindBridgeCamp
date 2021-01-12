@@ -38,7 +38,7 @@ Component({
           listService.GetRoomsParticipated().then(
             (res: any) => {
               this.setData({
-                Invitations: this.SetParticipatedRoomStatus(res.data)
+                Invitations: res.data
             })}
           ).catch((res) => console.error(res));
         }else if(pageName == "hall"){
@@ -92,23 +92,6 @@ Component({
           });
         })
         .catch((res) => console.error(res.errMsg));
-    },
-
-    SetParticipatedRoomStatus(rooms: []){
-      let currentDateTime: Date = new Date();
-      rooms.forEach((room:any) =>{
-        let startDate:Date = new Date(room.StartDate);
-        let endDate:Date = new Date(room.EndDate);
-        if(currentDateTime < startDate){
-          room.Status = "NotStart"
-        }else if(currentDateTime > startDate && currentDateTime < endDate){
-          room.Status = "InProcess"
-        }else{
-          room.Status = "Over"
-        };
-        room.Participated = true;        
-      });
-      return rooms;
     },
 
     GetCurrentPageName(){
