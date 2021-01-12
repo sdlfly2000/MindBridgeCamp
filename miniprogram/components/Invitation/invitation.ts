@@ -22,6 +22,13 @@ Component({
     show: function(){
       let currentDateTime = new Date(Date.now());
       let endDateTime = new Date(currentDateTime.getTime() + 3600000);
+
+      if(endDateTime.getDate() != currentDateTime.getDate()){
+        endDateTime = new Date(currentDateTime.getTime()); 
+        endDateTime.setHours(23);
+        endDateTime.setMinutes(59);
+      }
+
       this.setData({
         BookingDate: FormatDate(currentDateTime),
         BookingHourStart: FormatTime(currentDateTime),
@@ -98,7 +105,6 @@ Component({
         CreatedOn: formatTime(new Date(Date.now())),
         CurrentParticipantCount: 1
       };
-      console.info(model);
       invitationService.CreateInvitation(model).then(
         () => {
           wx.showModal({
