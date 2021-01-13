@@ -35,8 +35,9 @@ Component({
         if(pageName == "main"){
           listService.GetRoomsParticipated().then(
             (res: any) => {
+              let Rooms = this.MapParticipatedRoom(res.data);
               this.setData({
-                Invitations: res.data
+                Invitations: Rooms
             })}
           ).catch((res) => console.error(res));
         }else if(pageName == "hall"){
@@ -60,6 +61,19 @@ Component({
           res.eventChannel.emit("InvitationDetailRoomModel", {RoomModel: roomModel})
         }
       });
+    },
+
+    MapParticipatedRoom(rooms: []){
+      rooms.forEach((room:any) => {
+        if(room.Status==1){
+          room.Thumb = "/image/NotStart.png";
+        }else if(room.Status==0){
+          room.Thumb = "/image/InProcess.png";
+        }else if(room.Status==2){
+          room.Thumb = "/image/Complete.png";
+        }
+      });
+      return rooms;
     },
 
     JoinInvitation: function(e){
