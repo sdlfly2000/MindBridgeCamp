@@ -3,7 +3,7 @@
 
 App<IAppOption>({
   globalData: {
-    mainPage: "/components/calc/calc",
+    mainPage: "/pages/main/main",
     loginPage: "/pages/login/login",
     appName: "MindBridgeCamp",
     // baseUrlAuth: "https://www.idea-activator.com:7002/api/",
