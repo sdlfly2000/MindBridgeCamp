@@ -4,23 +4,6 @@ Page({
   data:{
     previousScroll:0
   },
-  onLoad(){
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: res => {
-              app.globalData.userInfo = res.userInfo              
-              if (app.userInfoReadyCallback) {
-                app.userInfoReadyCallback(res)
-              }
-            },
-          })
-        }else{
-        }
-      },
-    })
-  },
   onShow(){
     if (typeof this.getTabBar === 'function' &&
     this.getTabBar()) {
