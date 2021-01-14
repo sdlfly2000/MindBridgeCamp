@@ -48,23 +48,36 @@ export const webClient = function(url: string, httpMethod?: any, requestData?: a
   );
 }
 
+export const UpdateUserInfo = function(app: IAppOption, userInfo: any){
+  let loginToken:string = wx.getStorageSync("LoginToken");
+  let updateUserInfoUrl: string = app.globalData.baseUrlApp + "User/UpdateUserInfo/" + loginToken;
+  let rqtData = {
+
+  }
+  webClient(updateUserInfoUrl, "POST", rqtData);
+}
+
 export const IsLoginTokenValid = function(app: IAppOption){
   let loginToken:string = wx.getStorageSync("LoginToken");
   return new Promise(
     (resolve, error) => {
-      wx.request({
-        url: app.globalData.baseUrlAuth + "WeixinLogin/IsLoginTokenValid/" + loginToken,
-        success: function(res){
-          if(res.statusCode == 200){
-            resolve(res);            
-          }else{
-            error(res);
+      if(loginToken == ''){
+        error("LoginToken is undefined");
+      }else{
+        wx.request({
+          url: app.globalData.baseUrlAuth + "WeixinLogin/IsLoginTokenValid/" + loginToken,
+          success: function(res){
+            if(res.statusCode == 200){
+              resolve(res);
+            }else{
+              error(res);
+            }
+          },
+          fail: function(e){
+            console.error(e);
           }
-        },
-        fail: function(e){
-          console.error(e);
-        }
-      });
+        });
+      }
     }
   );
 }
@@ -99,7 +112,7 @@ export const Login = function(app: IAppOption){
   ) 
 }
 
-export const GetUserInformation = function(app: IAppOption){
+export const GetLocalUserInformation = function(app: IAppOption){
   wx.getSetting({
     success: res => {
       if(res.authSetting['scope.userInfo']){

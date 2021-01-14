@@ -1,5 +1,5 @@
 // app.ts
-import { GetUserInformation } from "./utils/util"
+import { GetLocalUserInformation } from "./utils/util"
 
 App<IAppOption>({
   globalData: {
@@ -16,6 +16,6 @@ App<IAppOption>({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    GetUserInformation(this);
+    GetLocalUserInformation(this);
   }
 })
