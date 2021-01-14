@@ -98,3 +98,20 @@ export const Login = function(app: IAppOption){
     }
   ) 
 }
+
+export const GetUserInformation = function(app: IAppOption){
+  wx.getSetting({
+    success: res => {
+      if(res.authSetting['scope.userInfo']){
+        wx.getUserInfo({
+          success: res => {
+            app.globalData.userInfo = res.userInfo;
+            if(app.userInfoReadyCallback){
+              app.userInfoReadyCallback(res);
+            }
+          }
+        })
+      }
+    }
+  })
+}

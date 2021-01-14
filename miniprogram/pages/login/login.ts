@@ -37,12 +37,13 @@ Page({
     }
   },
   getUserInfo(e: any) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true,
-    })
-    wx.switchTab({url:app.globalData.mainPage})
+    if(e.detail.userInfo != undefined){
+      app.globalData.userInfo = e.detail.userInfo
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true,
+      })
+      wx.switchTab({url:app.globalData.mainPage})
+    }
   }
 })

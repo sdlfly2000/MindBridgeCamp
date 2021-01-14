@@ -1,11 +1,12 @@
 // app.ts
-// import { Login } from "./utils/util"
+import { GetUserInformation } from "./utils/util"
 
 App<IAppOption>({
   globalData: {
     mainPage: "/pages/main/main",
     loginPage: "/pages/login/login",
     appName: "MindBridgeCamp",
+    userInfo: undefined,
     // baseUrlAuth: "https://www.idea-activator.com:7002/api/",
     baseUrlAuth: "http://192.168.31.250:8002/api/",
     baseUrlApp: "http://192.168.31.250:8003/api/"
@@ -15,6 +16,6 @@ App<IAppOption>({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    // Login(this);
+    GetUserInformation(this);
   }
 })
