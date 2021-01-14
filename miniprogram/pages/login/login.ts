@@ -14,14 +14,14 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true,
       })
-      wx.redirectTo({url:app.globalData.mainPage})
+      wx.switchTab({url:app.globalData.mainPage})
     } else if (this.data.canIUse) {
       app.userInfoReadyCallback = res => {
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true,
         })
-        wx.redirectTo({url:app.globalData.mainPage})
+        wx.switchTab({url:app.globalData.mainPage})
       }
     } else {
       wx.getUserInfo({
@@ -31,7 +31,7 @@ Page({
             userInfo: res.userInfo,
             hasUserInfo: true,
           })
-          wx.redirectTo({url:app.globalData.mainPage})
+          wx.switchTab({url:app.globalData.mainPage})
         },
       })
     }
@@ -43,6 +43,6 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true,
     })
-    wx.redirectTo({url:app.globalData.mainPage})
+    wx.switchTab({url:app.globalData.mainPage})
   }
 })
