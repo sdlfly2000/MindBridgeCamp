@@ -5,7 +5,7 @@ App<IAppOption>({
   globalData: {
     mainPage: "/components/calc/calc",
     loginPage: "/pages/login/login",
-    appName: "RealEstateCalc",
+    appName: "MindBridgeCamp",
     // baseUrlAuth: "https://www.idea-activator.com:7002/api/",
     baseUrlAuth: "http://192.168.31.250:8002/api/",
     baseUrlApp: "http://192.168.31.250:8003/api/"
