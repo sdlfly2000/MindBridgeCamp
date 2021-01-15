@@ -5,7 +5,7 @@ var app = getApp<IAppOption>();
 
 Page({
   data: {
-    notificationAuthUerInfo: "程序申请获取本人信息",
+    notificationAuthUerInfo: "程序申请获取本人公开信息， 如昵称、头像、地区以及性别。",
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
