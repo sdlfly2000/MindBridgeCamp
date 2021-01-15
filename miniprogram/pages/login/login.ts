@@ -1,4 +1,6 @@
 // login.ts
+import { loginService } from "./LoginService"
+
 var app = getApp<IAppOption>();
 
 Page({
@@ -43,7 +45,8 @@ Page({
         userInfo: e.detail.userInfo,
         hasUserInfo: true,
       })
-      wx.switchTab({url:app.globalData.mainPage})
+	  loginService.UpdateOrAddUserInfo();
+	  wx.switchTab({url:app.globalData.mainPage})
     }
   }
 })

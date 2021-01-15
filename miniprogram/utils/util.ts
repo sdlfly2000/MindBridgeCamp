@@ -51,10 +51,16 @@ export const webClient = function(url: string, httpMethod?: any, requestData?: a
 export const UpdateUserInfo = function(app: IAppOption, userInfo: any){
   let loginToken:string = wx.getStorageSync("LoginToken");
   let updateUserInfoUrl: string = app.globalData.baseUrlApp + "User/UpdateUserInfo/" + loginToken;
-  let rqtData = {
-
+  let userInfoData = {
+	NickName: userInfo.NickName,
+	AvatarUrl: userInfo.AvatarUrl,
+	Country: userInfo.Country,
+	Province: userInfo.Province,
+	City: userInfo.City,
+	Language: userInfo.Language
   }
-  webClient(updateUserInfoUrl, "POST", rqtData);
+  webClient(updateUserInfoUrl, "POST", userInfoData)
+	.catch((res) => console.error(res));
 }
 
 export const IsLoginTokenValid = function(app: IAppOption){
