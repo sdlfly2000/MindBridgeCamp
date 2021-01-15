@@ -45,8 +45,8 @@ Page({
         userInfo: e.detail.userInfo,
         hasUserInfo: true,
       })
-	  loginService.UpdateOrAddUserInfo();
-	  wx.switchTab({url:app.globalData.mainPage})
+      loginService.UpdateOrAddUserInfo(e.detail.userInfo);
+      wx.switchTab({url:app.globalData.mainPage})
     }
   }
 })

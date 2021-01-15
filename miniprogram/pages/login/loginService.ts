@@ -4,49 +4,47 @@ var app = getApp<IAppOption>();
 
 class LoginService{
 	private BaseUrlApp: string = "";
-	private UserInfo: {};
 	private LoginToken: string = "";
 	
-	constructor(globalData: any){
-		this.BaseUrlApp = globalData.baseUrlApp;
-		this.UserInfo = globalData.UserInfo;
+	constructor(baseUrlApp: string){
+		this.BaseUrlApp = baseUrlApp;
 		this.LoginToken = wx.getStorageSync("LoginToken");
 	}
 	
-	public UpdateOrAddUserInfo(){
-		let isUserExistUrl = this.baseUrlApp + "User/IsUserExist/" + this.LoginToken;
+	public UpdateOrAddUserInfo(userInfo: any){
+		let isUserExistUrl = this.BaseUrlApp + "User/IsUserExist/" + this.LoginToken;
 		webClient(isUserExistUrl)
-			.then(() => this.UpdateUserInfo(this.UserInfo))
-			.catch(() => this.AddUserInfo(this.UserInfo));
+			.then(() => this.UpdateUserInfo(userInfo))
+			.catch(() => this.AddUserInfo(userInfo));
 	}
 
 	private UpdateUserInfo(userInfo: any){
 		let updateUserInfoUrl: string = this.BaseUrlApp + "User/UpdateUserInfo/" + this.LoginToken;
 		let userInfoData = {
-			NickName: userInfo.NickName,
-			AvatarUrl: userInfo.AvatarUrl,
-			Country: userInfo.Country,
-			Province: userInfo.Province,
-			City: userInfo.City,
-			Language: userInfo.Language
+			NickName: userInfo.nickName,
+			AvatarUrl: userInfo.avatarUrl,
+			Country: userInfo.country,
+			Province: userInfo.province,
+			City: userInfo.city,
+			Language: userInfo.language
 		}
 		webClient(updateUserInfoUrl, "POST", userInfoData)
 			.catch((res) => console.error(res));
 	}
 
-	private AddUser(userInfo: any){
-		let addUserInfoUrl: string = this.baseUrlApp + "User/AddUser/" + this.LoginToken;
+	private AddUserInfo(userInfo: any){
+		let addUserInfoUrl: string = this.BaseUrlApp + "User/AddUser/" + this.LoginToken;
 		let userInfoData = {
-			NickName: userInfo.NickName,
-			AvatarUrl: userInfo.AvatarUrl,
-			Country: userInfo.Country,
-			Province: userInfo.Province,
-			City: userInfo.City,
-			Language: userInfo.Language
+			NickName: userInfo.nickName,
+			AvatarUrl: userInfo.avatarUrl,
+			Country: userInfo.country,
+			Province: userInfo.province,
+			City: userInfo.city,
+			Language: userInfo.language
 		}
 		webClient(addUserInfoUrl, "POST", userInfoData)
 			.catch((res) => console.error(res));
 	}	
 }
 
-export const loginService = new LoginService(app.globalData);
+export const loginService = new LoginService(app.globalData.baseUrlApp);

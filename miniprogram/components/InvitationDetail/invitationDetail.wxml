@@ -10,7 +10,7 @@
     <van-field readonly="true" label="发起人" value="{{InvitationShown.Created}}"></van-field>
     <van-cell title="参加人员"/>
     <van-grid column-num="4" border="false" custom-class="invitation-detail-participants">
-      <van-grid-item wx:for="{{ParticipantsShown}}" wx:key="index" text="{{item.Name}}" icon="user-o" icon-class="{{item.GenderClass}}"/>
+      <van-grid-item wx:for="{{ParticipantsShown}}" wx:key="index" text="{{item.NickName}}" icon="user-o" icon-class="{{item.GenderClass}}"/>
     </van-grid>
     <view class="invitation-detail-buttons">
       <van-button custom-class="invitation-detail-button" hairline type="info" data-roomid="{{InvitationShown.RoomId}}" bind:click="JoinInvitation">加入</van-button>
