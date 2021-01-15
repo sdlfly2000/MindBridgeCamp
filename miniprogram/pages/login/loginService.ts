@@ -4,22 +4,20 @@ var app = getApp<IAppOption>();
 
 class LoginService{
 	private BaseUrlApp: string = "";
-	private LoginToken: string = "";
-	
+
 	constructor(baseUrlApp: string){
 		this.BaseUrlApp = baseUrlApp;
-		this.LoginToken = wx.getStorageSync("LoginToken");
 	}
 	
-	public UpdateOrAddUserInfo(userInfo: any){
-		let isUserExistUrl = this.BaseUrlApp + "User/IsUserExist/" + this.LoginToken;
+	public UpdateOrAddUserInfo(loginToken: string, userInfo: any){
+		let isUserExistUrl = this.BaseUrlApp + "User/IsUserExist/" + loginToken;
 		webClient(isUserExistUrl)
-			.then(() => this.UpdateUserInfo(userInfo))
-			.catch(() => this.AddUserInfo(userInfo));
+			.then(() => this.UpdateUserInfo(loginToken, userInfo))
+			.catch(() => this.AddUserInfo(loginToken, userInfo));
 	}
 
-	private UpdateUserInfo(userInfo: any){
-		let updateUserInfoUrl: string = this.BaseUrlApp + "User/UpdateUserInfo/" + this.LoginToken;
+	private UpdateUserInfo(loginToken: string, userInfo: any){
+		let updateUserInfoUrl: string = this.BaseUrlApp + "User/UpdateUserInfo/" + loginToken;
 		let userInfoData = {
 			NickName: userInfo.nickName,
 			AvatarUrl: userInfo.avatarUrl,
@@ -32,8 +30,8 @@ class LoginService{
 			.catch((res) => console.error(res));
 	}
 
-	private AddUserInfo(userInfo: any){
-		let addUserInfoUrl: string = this.BaseUrlApp + "User/AddUser/" + this.LoginToken;
+	private AddUserInfo(loginToken: string, userInfo: any){
+		let addUserInfoUrl: string = this.BaseUrlApp + "User/AddUser/" + loginToken;
 		let userInfoData = {
 			NickName: userInfo.nickName,
 			AvatarUrl: userInfo.avatarUrl,

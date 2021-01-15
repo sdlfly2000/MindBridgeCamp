@@ -1,5 +1,6 @@
 // login.ts
 import { loginService } from "./LoginService"
+import { Login } from "../../utils/util";
 
 var app = getApp<IAppOption>();
 
@@ -9,7 +10,8 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onLoad() {
-   if (this.data.canIUse) {
+    Login(app);
+    if (this.data.canIUse) {
       app.userInfoReadyCallback = res => {
         app.globalData.userInfo = res.userInfo
         wx.switchTab({url:app.globalData.mainPage})
@@ -24,9 +26,10 @@ Page({
     }
   },
   getUserInfo(e: any) {
+    let loginToken = wx.getStorageSync("LoginToken");
     if(e.detail.userInfo != undefined){
       app.globalData.userInfo = e.detail.userInfo
-      loginService.UpdateOrAddUserInfo(e.detail.userInfo);
+      loginService.UpdateOrAddUserInfo(loginToken, e.detail.userInfo);
       wx.switchTab({url:app.globalData.mainPage})
     }
   }
