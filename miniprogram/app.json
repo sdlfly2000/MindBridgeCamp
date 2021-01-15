@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/login/login",
     "pages/main/main",
     "pages/personal/personal",
@@ -13,7 +14,7 @@
     "components/Invitation/invitation",
     "components/ShareNotes/shareNotes",
     "components/Exchange/exchange",
-    "components/InvitationDetail/invitationDetail"
+    "components/InvitationDetail/invitationDetail" 
   ],
   "tabBar": {
     "custom": true,

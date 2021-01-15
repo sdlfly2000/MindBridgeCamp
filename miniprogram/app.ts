@@ -11,11 +11,6 @@ App<IAppOption>({
     baseUrlAuth: "http://192.168.31.250:8002/api/",
     baseUrlApp: "http://192.168.31.250:8003/api/"
   },
-  userInfoReadyCallback: function(res){
-    if(res.userInfo != undefined){
-      this.globalData.userInfo = res.userInfo;
-    }
-  },
   onLaunch() {
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
