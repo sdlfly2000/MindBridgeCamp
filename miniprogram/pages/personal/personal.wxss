@@ -22,11 +22,6 @@ radio{
   border-radius: 0 0 50% 50%;
 }
 
-.personal-details {
-  height: 70%;
-  overflow: scroll;
-}
-
 .personal-info {
   display: flex;
   flex-direction: column;
@@ -35,7 +30,14 @@ radio{
   overflow: hidden;
   align-items: center;
   vertical-align: center;
+}
+
+.personal-info-fixed {
   display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: end;
+  background-color: #c492f3;
 }
 
 .avatar-image-container {
@@ -46,6 +48,14 @@ radio{
   height: 150rpx;
 }
 
+.avatar-image-container-fixed{
+  display: flex;
+  border-radius: 100%;
+  overflow: hidden;
+  width: 80rpx;
+  height: 80rpx;
+}
+
 .avatar-image {
   display: flex;
 }
@@ -54,4 +64,8 @@ radio{
   display: flex;
   font-size: xx-large;
   color: white;
+}
+
+.nickname-container-fixed{
+  display: none;
 }

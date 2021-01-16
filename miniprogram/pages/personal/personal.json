@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "Personal-Details" : "../../components/PersionalDetails/personal"
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
   }
 }
