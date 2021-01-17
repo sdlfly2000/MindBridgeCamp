@@ -1,44 +1,29 @@
 <mp-form>
   <van-cell-group title="基本信息">
-    <van-field model:value="{{realName}}" label="真实姓名" placeholder="真实姓名"/>
+    <van-field model:value="{{name}}" label="真实姓名" placeholder="真实姓名"/>
     <van-field model:value="{{majorIn}}" label="专业" placeholder="专业"/>
     <van-cell title="性别">
         <van-radio-group model:value="{{gender}}" bind:change="FormRadioChange" data-name="gender">
-          <van-radio name="true">男</van-radio>
-          <van-radio name="false">女</van-radio>     
+          <van-radio name="0">男</van-radio>
+          <van-radio name="1">女</van-radio>     
         </van-radio-group>
     </van-cell>
-    <van-field type="number" model:value="{{height}}" label="身高" placeholder="米"/>
+    <van-field type="number" model:value="{{height}}" label="身高" placeholder="厘米"/>
     <van-field type="number" model:value="{{weight}}" label="体重" placeholder="Kg"/>
     <van-field model:value="{{hobby}}" label="兴趣" placeholder="兴趣爱好"/>
-    <van-field model:value="{{learnConent}}" label="自习内容" placeholder="自习内容"/>
+    <van-field model:value="{{studyConent}}" label="自习内容" placeholder="自习内容"/>
     <van-cell title="意向">
-      <van-radio-group model:value="{{objective}}" bind:change="FormRadioChange" data-name="objective">
-        <van-radio name="1">升学</van-radio>
-        <van-radio name="2">出国</van-radio>
-        <van-radio name="3">就业</van-radio>
-        <van-radio name="4">公务员</van-radio>
-        <van-radio name="5">创业</van-radio>
+      <van-radio-group model:value="{{expectationAfterGraduation}}" bind:change="FormRadioChange" data-name="expectationAfterGraduation">
+        <van-radio name="升学">升学</van-radio>
+        <van-radio name="出国">出国</van-radio>
+        <van-radio name="就业">就业</van-radio>
+        <van-radio name="公务员">公务员</van-radio>
+        <van-radio name="创业">创业</van-radio>
       </van-radio-group>
-    </van-cell>  
-  </van-cell-group>
-
-  <van-cell-group title="意向">
-    <view wx:if="">
-      <van-cell title="升学">
-          <van-radio-group model:value="{{continueStudy}}">
-              <van-radio name="true">直妍</van-radio>
-              <van-radio name="false">考研</van-radio>     
-          </van-radio-group>
-      </van-cell>
-    </view>
-    <view wx:if="">
-      <van-cell title="国家">
-        <van-field model:value="{{onBoardStudyCountry}}" placeholder="目标国家"/>
-      </van-cell>
-    </view> 
+    </van-cell>
   </van-cell-group>
 </mp-form>
 <view class="button-area">
-  <van-button type="primary" block>确认</van-button>
+  <van-button type="info" bind:click="SubmitChange" custom-class="buttons">确认</van-button>
+  <van-button type="info" plain bind:click="CancelEdit" custom-class="buttons">取消</van-button>
 </view>

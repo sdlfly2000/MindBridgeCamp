@@ -3,5 +3,13 @@ van-radio {
 }
 
 .button-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin: 20rpx;
+}
+
+.buttons {
+  width: 200rpx;
+  margin-right: 20rpx;
 }
