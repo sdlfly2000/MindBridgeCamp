@@ -1,13 +1,8 @@
 <!--miniprogram/pages/pair/pair.wxml-->
-<view class="pair-head">
+<!-- <view class="pair-head">
   <text class="pair-head-text">伙伴匹配</text>
 </view>
 <view class="pair-module-container">
   <pair-module></pair-module>
-</view>
-
-<van-overlay show="true">\
-    <view class="overlay-information-wrapper">
-    <view class="overlay-information" ><text>很快就能用了 ：）</text></view>
-    </view>
-</van-overlay>
+</view> -->
+<text>Coming Soon...</text>
