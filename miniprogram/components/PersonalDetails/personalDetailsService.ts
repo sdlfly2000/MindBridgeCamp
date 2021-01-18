@@ -12,6 +12,11 @@ class PersonalDetailService {
     let updateUserUrl: string = this.BaseUrlApp + "User/UpdateUser/" + this.GeLoginToken();
     webClient(updateUserUrl, "POST", userModel).catch((e) => console.error(e));
   }
+  
+  public GetUser(string loginToken){
+	let getUserUrl: string = this.BaseUrlApp + "User/GetByToken/" + this.GeLoginToken();
+	return webClient(getUserUrl);  
+  }
 
   private GeLoginToken(): string {
     return wx.getStorageSync("LoginToken");

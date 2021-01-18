@@ -9,6 +9,25 @@ Component({
     hobby: "",
     studyConent:""
   },
+  pageLifetimes：{
+	show: function(){
+	  personalDetailService.GetUser()
+		.then(
+		(res) => {
+		  this.setData({
+			name: res.Name,
+			majorIn: res.MajorIn,
+			height: res.Height,
+			weight: res.Weight,
+			hobby: res.Hobby,
+			studyConent: res.StudyContent,
+			expectationAfterGraduation: res.ExpectationAfterGraduation,
+			gender: res.Gender
+		  });  	
+		})
+		.catch((e) => console.error(e))	
+	} 
+  }，
   methods:{
     FormRadioChange(event){
       const {name} = event.target.dataset
