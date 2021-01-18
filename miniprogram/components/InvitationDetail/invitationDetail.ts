@@ -3,7 +3,8 @@ import { invitationDetailService } from "./invitationDetailService";
 Component({
   data:{
     InvitationShown: {},
-    ParticipantsShown: []
+    ParticipantsShown: [],
+    IsJoinRoom: false
   },
   lifetimes:{
     ready: function(){
@@ -21,22 +22,24 @@ Component({
           }
         ).catch((e) => console.error(e));
         invitationDetailService.GetParticipants(roomModel.RoomId)
-        .then(
-          (res:any) => {
-            let participants:[] = res.data;
-            participants.forEach(
-              (p:any) => {
-                if(p.Gender == 0){
-                  p.GenderClass="participant-boy";
-                }else{
-                  p.GenderClass="participant-girl";
-                } 
-            });
-            vm.setData({
-              ParticipantsShown: participants
-            });
-          }
-        ).catch((err) => console.error(err));
+          .then(
+            (res:any) => {
+              let participants:[] = res.data;
+              participants.forEach(
+                (p:any) => {
+                  if(p.Gender == 0){
+                    p.GenderClass="participant-boy";
+                  }else if(p.Gender == 1){
+                    p.GenderClass="participant-girl";
+                  } 
+              });
+              vm.setData({
+                ParticipantsShown: participants
+              });
+            }
+          ).catch((err) => console.error(err));
+        invitationDetailService.IsJoinRoom(roomModel.RoomId)
+          .then(() => vm.setData({ IsJoinRoom: true }));
       });
     }
   },

@@ -1,3 +1,5 @@
+import { webClient } from "../../utils/util";
+
 var app = getApp<IAppOption>();
 
 class InvitationDetailService{
@@ -52,6 +54,11 @@ class InvitationDetailService{
         });
       }
     );
+  }
+
+  public IsJoinRoom(roomId: string): Promise<any> {
+    let isJoinRoomUrl = this.BaseUrlApp + "LearningRoom/IsJoinRoom/" + this.GetLoginToken() + "/" + roomId;
+    return webClient(isJoinRoomUrl);
   }
 
   private GetLoginToken(): string {

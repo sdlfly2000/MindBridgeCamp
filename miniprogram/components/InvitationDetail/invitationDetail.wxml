@@ -13,7 +13,7 @@
       <van-grid-item wx:for="{{ParticipantsShown}}" wx:key="index" text="{{item.NickName}}" icon="user-o" icon-class="{{item.GenderClass}}"/>
     </van-grid>
     <view class="invitation-detail-buttons">
-      <van-button custom-class="invitation-detail-button" hairline type="info" data-roomid="{{InvitationShown.RoomId}}" bind:click="JoinInvitation">加入</van-button>
+      <van-button custom-class="invitation-detail-button" hairline type="info" data-roomid="{{InvitationShown.RoomId}}" bind:click="JoinInvitation" disabled="{{ IsJoinRoom }}">加入</van-button>
       <van-button custom-class="invitation-detail-button" hairline plain type="info" bind:click="CloseInvitationDetail">取消</van-button>        
     </view>
   </view>
