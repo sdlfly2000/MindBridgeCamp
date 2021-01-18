@@ -9,25 +9,25 @@ Component({
     hobby: "",
     studyConent:""
   },
-  pageLifetimes：{
-	show: function(){
-	  personalDetailService.GetUser()
-		.then(
-		(res) => {
-		  this.setData({
-			name: res.Name,
-			majorIn: res.MajorIn,
-			height: res.Height,
-			weight: res.Weight,
-			hobby: res.Hobby,
-			studyConent: res.StudyContent,
-			expectationAfterGraduation: res.ExpectationAfterGraduation,
-			gender: res.Gender
-		  });  	
-		})
-		.catch((e) => console.error(e))	
-	} 
-  }，
+  pageLifetimes: {
+    show: function(){
+      personalDetailsService.GetUser()
+      .then(
+      (res: any) => {
+        this.setData({
+        name: res.data.Name,
+        majorIn: res.data.MajorIn,
+        height: res.data.Height,
+        weight: res.data.Weight,
+        hobby: res.data.Hobby,
+        studyConent: res.data.StudyContent,
+        expectationAfterGraduation: res.data.ExpectationAfterGraduation,
+        gender: res.data.Gender
+        });  	
+      })
+      .catch((e: any) => console.error(e));	
+    } 
+  },
   methods:{
     FormRadioChange(event){
       const {name} = event.target.dataset
