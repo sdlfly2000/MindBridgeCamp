@@ -25,3 +25,20 @@ page {
 .pair-module-container {
   margin: 20rpx;
 }
+
+.overlay-information-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.overlay-information{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:white;
+  height: 250rpx;
+  width: 250rpx;
+  border-radius: 20rpx;
+}

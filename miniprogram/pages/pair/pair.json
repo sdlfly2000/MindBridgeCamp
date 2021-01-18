@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "pair-module": "../../components/PairModule/pairModule"
+    "pair-module": "../../components/PairModule/pairModule",
+    "van-overlay": "@vant/weapp/overlay/index"
   }
 }
