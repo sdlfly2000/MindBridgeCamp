@@ -7,10 +7,10 @@ App<IAppOption>({
     loginPage: "/pages/login/login",
     appName: "MindBridgeCamp",
     userInfo: undefined,
-    baseUrlAuth: "https://www.idea-activator.com:7002/api/",
-    baseUrlApp: "https://www.idea-activator.com:7003/api/",
-    // baseUrlAuth: "http://192.168.31.250:8002/api/",
-    // baseUrlApp: "http://192.168.31.250:8003/api/"
+    // baseUrlAuth: "https://www.idea-activator.com:7002/api/",
+    // baseUrlApp: "https://www.idea-activator.com:7003/api/",
+    baseUrlAuth: "http://192.168.31.250:8002/api/",
+    baseUrlApp: "http://192.168.31.250:8003/api/"
   },
   onLaunch() {
     // 展示本地存储能力

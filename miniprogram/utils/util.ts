@@ -90,7 +90,7 @@ export const IsLoginTokenValid = function(app: IAppOption){
 
 export const Login = function(app: IAppOption){
   return new Promise(
-    (resolve) => {
+    (resolve, error) => {
       wx.login({
         success: res => {
           console.info("Login Code: " + res.code);      
@@ -109,7 +109,12 @@ export const Login = function(app: IAppOption){
                 wx.setStorageSync('LoginToken', response.data)
                 console.info("Login Token: " + response.data); 
                 resolve(response);
+              }else{
+                error(response);
               }
+            },
+            fail: function(res){
+              error(res);
             }
           })
         },
@@ -119,12 +124,16 @@ export const Login = function(app: IAppOption){
 }
 
 export const GetLocalUserInformation = function(app: IAppOption){
+  app.userInfoReadyCallback = res => {
+    app.globalData.userInfo = res.userInfo        
+  }
   wx.getSetting({
     success: res => {
       if(res.authSetting['scope.userInfo']){
         wx.getUserInfo({
           success: res => {
             app.globalData.userInfo = res.userInfo;
+            console.info("UserInfo：" + JSON.stringify(res.userInfo));
             if(app.userInfoReadyCallback){
               app.userInfoReadyCallback(res);
             }
