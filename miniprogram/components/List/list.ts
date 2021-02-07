@@ -62,7 +62,16 @@ Component({
         }
       });
     },
-
+    NavigateToChatMessage: function(e){
+      let roomId = e.currentTarget.dataset.roomid;
+      let roomModel:any = this.data.Invitations.find((invitation:any) => invitation.RoomId == roomId);
+      wx.navigateTo({
+        url: "/components/ChatMessage/chatMessage",
+        success: function(res){
+          res.eventChannel.emit("ChatMessageRoomModel", {RoomModel: roomModel})
+        }
+      });
+    },
     MapParticipatedRoom(rooms: []){
       rooms.forEach((room:any) => {
         if(room.Status==1){

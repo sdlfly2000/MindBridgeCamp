@@ -11,6 +11,7 @@
       <van-button custom-class="btn_join" hairline plain type="info" data-roomid="{{item.RoomId}}" size="mini" bind:click="JoinInvitation" wx:if="{{!item.Participated}}">加入</van-button>
       <van-button custom-class="btn_join" hairline plain type="info" data-roomid="{{item.RoomId}}" size="mini" bind:click="SignInInvitation" wx:if="{{(item.Status==0 && item.Participated && !item.IsSignIn)}}">签到</van-button>
       <van-button custom-class="btn_join" hairline plain type="primary" data-roomid="{{item.RoomId}}" size="mini" wx:if="{{(item.IsSignIn)}}" disabled>已签到</van-button>
+      <van-button custom-class="btn_join" hairline plain type="info" data-roomid="{{item.RoomId}}" size="mini" bind:click="NavigateToChatMessage" wx:if="{{item.Participated}}">沟通</van-button>
       <van-button custom-class="btn_join" hairline plain type="info" data-roomid="{{item.RoomId}}" size="mini" bind:click="NavigateToDetails">详情</van-button>
     </view>
   </van-card>
