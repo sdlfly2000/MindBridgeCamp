@@ -1,0 +1,4 @@
+<!--components/ChatMessage/chatMessage.wxml-->
+<van-button type="primary" bind:click="ConnectToHub">Test</van-button>
+
+<van-button type="primary" bind:click="CloseToHub">Close</van-button>

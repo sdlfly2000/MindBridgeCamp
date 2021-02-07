@@ -15,7 +15,8 @@
     "components/ShareNotes/shareNotes",
     "components/Exchange/exchange",
     "components/InvitationDetail/invitationDetail",
-    "components/PersonalDetails/personalDetails"
+    "components/PersonalDetails/personalDetails",
+    "components/ChatMessage/chatMessage"
   ],
   "tabBar": {
     "custom": true,

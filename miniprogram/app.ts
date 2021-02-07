@@ -10,7 +10,8 @@ App<IAppOption>({
     // baseUrlAuth: "https://www.idea-activator.com:7002/api/",
     // baseUrlApp: "https://www.idea-activator.com:7003/api/",
     baseUrlAuth: "http://192.168.31.250:8002/api/",
-    baseUrlApp: "http://192.168.31.250:8003/api/"
+    baseUrlApp: "http://192.168.31.250:8003/api/",
+    bassUrlWs: "ws://192.168.31.250:8003/"
   },
   onLaunch() {
     // 展示本地存储能力
