@@ -1,1 +1,12 @@
-/* components/ChatMessage/chatMessage.wxss */
+.message-container {
+  margin:10rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.participant-status{
+  display: flex;
+  flex-direction: row;  
+  justify-content: flex-end;
+}

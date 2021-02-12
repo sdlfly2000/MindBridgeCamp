@@ -1,16 +1,18 @@
 var app = getApp<IAppOption>();
 
 class ChatMessageService{
-  private _bassUrlWs:string;  
+  private _baseUrlWs:string;  
+  private _baseUrlApp:string;
   private _socket: WechatMiniprogram.SocketTask | undefined;
-  constructor(bassUrlWs:string){
-    this._bassUrlWs = bassUrlWs;
+  constructor(baseUrlWs:string, baseUrlApp:string){
+    this._baseUrlWs = baseUrlWs;
+    this._baseUrlApp = baseUrlApp;
   }
   public Connect(RoomId:string){
     return new Promise(
       (resolve, error) => {
         this._socket = wx.connectSocket({
-          url: this._bassUrlWs + "ChatMessage/" + RoomId + "/" + this.GetLoginToken(),
+          url: this._baseUrlWs + "ChatMessage/" + RoomId + "/" + this.GetLoginToken(),
           success: function(res){
             resolve(res);
           },
@@ -43,9 +45,25 @@ class ChatMessageService{
       );
   }
 
+  public GetParticpantsOnline(roomId: string) {
+    return new Promise(
+      (resolve, error) =>
+      {
+        wx.request({
+          url: this._baseUrlApp + "LearningRoom" + "/GetParticipantsOnlineCount/" + roomId,
+          success: function(res){
+            resolve(res);
+          },
+          fail: function(res){
+            error(res);
+          }
+        });
+      });
+  }
+
   private GetLoginToken(): string {
     return wx.getStorageSync("LoginToken");
   }
 }
 
-export const chatMessageService = new ChatMessageService(app.globalData.bassUrlWs);
+export const chatMessageService = new ChatMessageService(app.globalData.baseUrlWs, app.globalData.baseUrlApp);

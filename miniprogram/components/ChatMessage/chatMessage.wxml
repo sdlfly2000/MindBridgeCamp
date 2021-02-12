@@ -1,4 +1,11 @@
-<!--components/ChatMessage/chatMessage.wxml-->
-<van-button type="primary" bind:click="ConnectToHub">Test</van-button>
+<view class="message-container">
+  <view class="participant-status">
+    <text>在线人数：{{participantsOnline}} / {{}}</text>
+  </view>
+  <van-divider />
+  <view class="message-display">
+  </view>
 
-<van-button type="primary" bind:click="CloseToHub">Close</van-button>
+  <view class="message-input">
+  </view>
+</view>
