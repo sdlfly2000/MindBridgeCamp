@@ -14,7 +14,6 @@ Component({
         let roomModel = data.RoomModel;
         vm.data.roomId = roomModel.RoomId;
         vm.ConnectToHub(roomModel.RoomId);
-        vm.GetCountOnlineParticipants(roomModel.RoomId);
       });
     },
     detached: function(){
@@ -24,7 +23,10 @@ Component({
   methods:{
     ConnectToHub:function(roomId:string){
       chatMessageService.Connect(roomId)
-        .then((res) =>console.info(res))
+        .then(() => {
+          this.GetCountOnlineParticipants(roomId);
+          this.GetParticipants(roomId);
+        })
         .catch((res) => console.error(res));
     },
     CloseToHub:function(){
@@ -34,6 +36,13 @@ Component({
       chatMessageService.GetParticpantsOnline(roomId)
         .then((res:any) => this.setData({
           participantsOnline: res.data
+        }))
+        .catch((res) => console.error(res));
+    },
+    GetParticipants:function(roomId: string){
+      chatMessageService.GetParticipants(roomId)
+        .then((res:any) => this.setData({
+          totalParticipants: res.data.length
         }))
         .catch((res) => console.error(res));
     },

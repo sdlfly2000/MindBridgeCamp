@@ -10,3 +10,9 @@
   flex-direction: row;  
   justify-content: flex-end;
 }
+
+.message-input{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

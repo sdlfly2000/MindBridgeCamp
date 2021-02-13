@@ -45,6 +45,26 @@ class ChatMessageService{
       );
   }
 
+  public GetParticipants(roomId:string){
+    return new Promise(
+      (resolve, error) => {
+        wx.request({
+          url: this._baseUrlApp + "LearningRoom" + "/GetParticipants/" + roomId,
+          success: function(res){
+            if(res.statusCode == 200){
+              resolve(res);
+            }else{
+              error(res);
+            }
+          },
+          fail:function(res){
+            error(res);
+          }
+        });
+      }
+    );
+  }
+
   public GetParticpantsOnline(roomId: string) {
     return new Promise(
       (resolve, error) =>

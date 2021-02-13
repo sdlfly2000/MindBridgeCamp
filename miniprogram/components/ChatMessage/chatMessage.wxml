@@ -1,11 +1,15 @@
 <view class="message-container">
   <view class="participant-status">
-    <text>在线人数：{{participantsOnline}} / {{}}</text>
+    <text>在线人数：{{participantsOnline}} / {{totalParticipants}}</text>
   </view>
   <van-divider />
   <view class="message-display">
   </view>
-
+  <van-divider />
   <view class="message-input">
+    <van-field placeholder="请输入" border="true" size="large" use-button-slot>
+      <van-button slot="button" plain type="info" round size="mini">发送</van-button>
+    </van-field>
+    
   </view>
 </view>
