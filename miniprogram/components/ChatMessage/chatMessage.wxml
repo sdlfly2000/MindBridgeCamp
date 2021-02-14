@@ -5,11 +5,12 @@
   <van-divider />
   <view class="message-display">
   </view>
-  <van-divider />
   <view class="message-input">
-    <van-field placeholder="请输入" border="true" size="large" use-button-slot>
-      <van-button slot="button" plain type="info" round size="mini">发送</van-button>
-    </van-field>
-    
+    <view class="message-inputbox-container">
+      <input type="text" cursor-spacing="15" placeholder="请输入" class="message-inputbox"/>
+    </view>
+    <view class="message-button-container">
+      <van-button plain type="info" squared custom-class="message-button">发送</van-button>
+    </view>
   </view>
 </view>
