@@ -5,6 +5,7 @@ Component({
     roomId: undefined,
     participantsOnline: 0,
     totalParticipants: 0,
+    messages:[]
   },
   lifetimes:{    
     ready: function(){
@@ -43,6 +44,13 @@ Component({
       chatMessageService.GetParticipants(roomId)
         .then((res:any) => this.setData({
           totalParticipants: res.data.length
+        }))
+        .catch((res) => console.error(res));
+    },
+    GetFullMessages: function(roomId: string){
+      chatMessageService.GetMessages(roomId)
+        .then((res: any) => this.setData({
+          messages: res
         }))
         .catch((res) => console.error(res));
     },

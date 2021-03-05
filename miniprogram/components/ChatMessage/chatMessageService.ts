@@ -45,6 +45,22 @@ class ChatMessageService{
       );
   }
 
+  public GetMessages(roomId: string){
+    return new Promise(
+      (resolve, error) => {
+        wx.request({
+          url: this._baseUrlApp + "LearningRoom/GetAllMessagesByRoom/" + this.GetLoginToken() + "/" + roomId,
+          success: function(res){
+            resolve(res);
+          },
+          fail: function(res){
+            error(res);
+          }
+        });
+      }
+    );
+  }
+
   public GetParticipants(roomId:string){
     return new Promise(
       (resolve, error) => {
