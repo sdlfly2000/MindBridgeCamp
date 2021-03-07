@@ -24,6 +24,13 @@ class ChatMessageService{
       }
     );
   }
+
+  public Send(content:string){
+    this._socket?.send({
+      data: content
+    });
+  }
+
   public Close(){
     this._socket?.close({});
   }
@@ -50,6 +57,28 @@ class ChatMessageService{
       (resolve, error) => {
         wx.request({
           url: this._baseUrlApp + "LearningRoom/GetAllMessagesByRoom/" + this.GetLoginToken() + "/" + roomId,
+          success: function(res){
+            resolve(res);
+          },
+          fail: function(res){
+            error(res);
+          }
+        });
+      }
+    );
+  }
+
+  public SaveMessage(roomId:string, message:string){
+    return new Promise(
+      (resolve, error) => {
+        wx.request({
+          url: this._baseUrlApp + "LearningRoom/SaveMessage",
+          method: "POST",
+          data: {
+            loginToken: this.GetLoginToken(),
+            roomId: roomId,
+            content: message
+          },
           success: function(res){
             resolve(res);
           },

@@ -2,10 +2,11 @@ import { chatMessageService } from "./chatMessageService";
 
 Component({
   data:{
-    roomId: undefined,
+    roomId: "",
     participantsOnline: 0,
     totalParticipants: 0,
-    messages:[]
+    messages:[],
+    messageInput:""
   },
   lifetimes:{    
     ready: function(){
@@ -13,8 +14,11 @@ Component({
       let eventChannel  = this.getEventChannel();
       eventChannel.on("ChatMessageRoomModel", function(data:any){
         let roomModel = data.RoomModel;
-        vm.data.roomId = roomModel.RoomId;
+        vm.setData({
+          roomId: roomModel.RoomId
+        });
         vm.ConnectToHub(roomModel.RoomId);
+        vm.GetFullMessages(roomModel.RoomId);
       });
     },
     detached: function(){
@@ -54,8 +58,17 @@ Component({
         }))
         .catch((res) => console.error(res));
     },
+    SendMessage: function(){
+      chatMessageService.Send(this.properties.messageInput);
+      chatMessageService.SaveMessage(this.data.roomId, this.properties.messageInput);
+    },
     getEventChannel(){
       return this.getOpenerEventChannel();
+    },
+    bindMessageInput: function(e){
+      this.setData({
+        messageInput: e.detail.value
+      })
     }
   }
 })

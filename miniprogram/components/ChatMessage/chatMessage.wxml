@@ -7,10 +7,10 @@
   </view>
   <view class="message-input">
     <view class="message-inputbox-container">
-      <input type="text" cursor-spacing="15" placeholder="请输入" class="message-inputbox"/>
+      <input type="text" cursor-spacing="15" placeholder="请输入" class="message-inputbox" value="{{messageInput}}" bindinput="bindMessageInput"/>
     </view>
     <view class="message-button-container">
-      <van-button plain type="info" squared custom-class="message-button">发送</van-button>
+      <van-button plain type="info" squared custom-class="message-button" bind:tap="SendMessage">发送</van-button>
     </view>
   </view>
 </view>
