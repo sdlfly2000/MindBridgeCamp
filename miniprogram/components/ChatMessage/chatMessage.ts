@@ -60,7 +60,6 @@ Component({
     },
     SendMessage: function(){
       chatMessageService.Send(this.properties.messageInput);
-      chatMessageService.SaveMessage(this.data.roomId, this.properties.messageInput);
     },
     getEventChannel(){
       return this.getOpenerEventChannel();
