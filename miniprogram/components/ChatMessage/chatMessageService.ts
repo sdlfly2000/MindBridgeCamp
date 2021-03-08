@@ -37,8 +37,8 @@ class ChatMessageService{
 
   private SetupEvents(){
     this._socket?.onOpen(
-      (res) => {
-        console.info(res);
+      () => {
+        console.info("Websocket connected.");
       });
       this._socket?.onError(
         (res) => {
