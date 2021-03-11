@@ -8,11 +8,11 @@ class ChatMessageService{
     this._baseUrlWs = baseUrlWs;
     this._baseUrlApp = baseUrlApp;
   }
-  public Connect(RoomId:string){
+  public Connect(connectOptions: ConnectOptions){
     return new Promise(
       (resolve, error) => {
         this._socket = wx.connectSocket({
-          url: this._baseUrlWs + "ChatMessage/" + RoomId + "/" + this.GetLoginToken(),
+          url: this._baseUrlWs + "ChatMessage/" + connectOptions.roomId + "/" + this.GetLoginToken(),
           success: function(res){
             resolve(res);
           },
@@ -20,7 +20,7 @@ class ChatMessageService{
             error(res);
           }
         });
-        this.SetupEvents();
+        this.SetupEvents({onMessage: connectOptions.onMessage});
       }
     );
   }
@@ -35,7 +35,7 @@ class ChatMessageService{
     this._socket?.close({});
   }
 
-  private SetupEvents(){
+  private SetupEvents(eventHandlers: WebsocketEventHandlers){
     this._socket?.onOpen(
       () => {
         console.info("Websocket connected.");
@@ -47,7 +47,9 @@ class ChatMessageService{
       );
       this._socket?.onMessage(
         (res) => {
+          let model = JSON.parse(res.data as string) as LearningRoomMessageModel
           console.info(res.data);
+          eventHandlers.onMessage(model);
         }
       );
   }
@@ -129,6 +131,22 @@ class ChatMessageService{
   private GetLoginToken(): string {
     return wx.getStorageSync("LoginToken");
   }
+}
+
+export interface ConnectOptions {
+  roomId:string,
+  onMessage: (message:LearningRoomMessageModel) => void
+}
+
+export interface WebsocketEventHandlers{
+  onMessage: (message:LearningRoomMessageModel) => void
+}
+
+export interface LearningRoomMessageModel{
+  createdByNickName: string,
+  content: string,
+  isCreatedByRequester: boolean,
+  createdOn: Date
 }
 
 export const chatMessageService = new ChatMessageService(app.globalData.baseUrlWs, app.globalData.baseUrlApp);

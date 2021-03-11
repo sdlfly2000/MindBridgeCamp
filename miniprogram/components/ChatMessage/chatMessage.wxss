@@ -18,6 +18,7 @@ page{
 }
 .message-display {
   height: 70%;
+  overflow: scroll;
 }
 
 .message-input {
@@ -53,4 +54,35 @@ page{
   justify-content: center;
   width:20%;
   height: 100%;
+}
+.message-wrap {
+  display: flex;
+  flex-direction: row;
+  height: 80rpx
+}
+.message-wrap-requester {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 80rpx
+}
+.message-sender {
+  display: flex;
+  flex-direction: column;
+  text-decoration: underline;
+}
+.message-content{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+.message-sender-requester {
+  display: flex;
+  flex-direction: column;
+  text-decoration: underline;
+}
+.message-content-requester {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
 }

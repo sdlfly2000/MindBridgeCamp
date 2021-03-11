@@ -1,11 +1,11 @@
-import { chatMessageService } from "./chatMessageService";
+import { chatMessageService, LearningRoomMessageModel } from "./chatMessageService";
 
 Component({
   data:{
     roomId: "",
     participantsOnline: 0,
     totalParticipants: 0,
-    messages:[],
+    messages: new Array<LearningRoomMessageModel>(),
     messageInput:""
   },
   lifetimes:{    
@@ -27,7 +27,15 @@ Component({
   },
   methods:{
     ConnectToHub:function(roomId:string){
-      chatMessageService.Connect(roomId)
+      let vm = this;
+      chatMessageService.Connect({roomId: roomId, onMessage: (model) => {      
+        let models = vm.data.messages;
+        models.push(model);
+        vm.setData({
+          messages: models,
+          messageInput: ""
+        });        
+      }})
         .then(() => {
           this.GetCountOnlineParticipants(roomId);
           this.GetParticipants(roomId);
@@ -54,7 +62,7 @@ Component({
     GetFullMessages: function(roomId: string){
       chatMessageService.GetMessages(roomId)
         .then((res: any) => this.setData({
-          messages: res
+          messages: res.data as Array<LearningRoomMessageModel>
         }))
         .catch((res) => console.error(res));
     },

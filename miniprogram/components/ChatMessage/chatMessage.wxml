@@ -4,6 +4,18 @@
   </view>
   <van-divider />
   <view class="message-display">
+    <view wx:for="{{messages}}" wx:key="index">
+      <view class="message-wrap" wx:if="{{!item.IsCreatedByRequester}}">
+        <view class="message-sender">{{item.CreatedByNickName}}</view>
+        <text>:</text>
+        <view class="message-content">{{item.Content}}</view>
+      </view>
+      <view class="message-wrap-requester" wx:if="{{item.IsCreatedByRequester}}">
+        <view class="message-content-requester">{{item.Content}}</view>
+        <text>:</text>
+        <view class="message-sender-requester">{{item.CreatedByNickName}}</view>        
+      </view>
+    </view>
   </view>
   <view class="message-input">
     <view class="message-inputbox-container">
