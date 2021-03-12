@@ -6,7 +6,8 @@ Component({
     participantsOnline: 0,
     totalParticipants: 0,
     messages: new Array<LearningRoomMessageModel>(),
-    messageInput:""
+    messageInput:"",
+    bottom:""
   },
   lifetimes:{    
     ready: function(){
@@ -33,8 +34,12 @@ Component({
         models.push(model);
         vm.setData({
           messages: models,
-          messageInput: ""
-        });        
+          messageInput: "",
+          bottom: ""
+        });   
+        vm.setData({
+          bottom: "scrollBottom"
+        });      
       }})
         .then(() => {
           this.GetCountOnlineParticipants(roomId);
@@ -62,12 +67,13 @@ Component({
     GetFullMessages: function(roomId: string){
       chatMessageService.GetMessages(roomId)
         .then((res: any) => this.setData({
-          messages: res.data as Array<LearningRoomMessageModel>
+          messages: res.data as Array<LearningRoomMessageModel>,
+          bottom: "scrollBottom"
         }))
         .catch((res) => console.error(res));
     },
     SendMessage: function(){
-      chatMessageService.Send(this.properties.messageInput);
+      chatMessageService.Send(this.properties.messageInput);      
     },
     getEventChannel(){
       return this.getOpenerEventChannel();

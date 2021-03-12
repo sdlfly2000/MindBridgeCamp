@@ -3,7 +3,7 @@
     <text>在线人数：{{participantsOnline}} / {{totalParticipants}}</text>
   </view>
   <van-divider />
-  <view class="message-display">
+  <scroll-view class="message-display" scroll-y="{{true}}" scroll-into-view="{{bottom}}">
     <view wx:for="{{messages}}" wx:key="index">
       <view class="message-wrap" wx:if="{{!item.IsCreatedByRequester}}">
         <view class="message-sender">{{item.CreatedByNickName}}</view>
@@ -14,9 +14,10 @@
         <view class="message-content-requester">{{item.Content}}</view>
         <text>:</text>
         <view class="message-sender-requester">{{item.CreatedByNickName}}</view>        
-      </view>
+      </view>      
     </view>
-  </view>
+    <view id="scrollBottom"></view>
+  </scroll-view>
   <view class="message-input">
     <view class="message-inputbox-container">
       <input type="text" cursor-spacing="15" placeholder="请输入" class="message-inputbox" value="{{messageInput}}" bindinput="bindMessageInput"/>
