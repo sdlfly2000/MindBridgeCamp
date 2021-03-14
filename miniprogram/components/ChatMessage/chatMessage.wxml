@@ -1,8 +1,8 @@
 <view class="message-container">
-  <view class="participant-status">
-    <text>在线人数：{{participantsOnline}} / {{totalParticipants}}</text>
+  <view class="participant-status">    
+    <text class="participant-statics">在线人数：{{participantsOnline}} / {{totalParticipants}}</text>
   </view>
-  <van-divider />
+  <br />
   <scroll-view class="message-display" scroll-y="{{true}}" scroll-into-view="{{bottom}}">
     <view wx:for="{{messages}}" wx:key="index">
       <view class="message-wrap" wx:if="{{!item.IsCreatedByRequester}}">

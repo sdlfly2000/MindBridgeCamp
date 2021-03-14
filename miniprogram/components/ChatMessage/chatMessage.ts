@@ -1,10 +1,11 @@
-import { chatMessageService, LearningRoomMessageModel } from "./chatMessageService";
+import { chatMessageService, LearningRoomMessageModel, Participant  } from "./chatMessageService";
 
 Component({
   data:{
     roomId: "",
     participantsOnline: 0,
     totalParticipants: 0,
+    participants: new Array<Participant>(),
     messages: new Array<LearningRoomMessageModel>(),
     messageInput:"",
     bottom:""
@@ -60,7 +61,8 @@ Component({
     GetParticipants:function(roomId: string){
       chatMessageService.GetParticipants(roomId)
         .then((res:any) => this.setData({
-          totalParticipants: res.data.length
+          totalParticipants: res.data.length,
+          participants: res.data as Array<Participant>
         }))
         .catch((res) => console.error(res));
     },

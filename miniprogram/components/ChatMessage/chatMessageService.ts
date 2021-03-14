@@ -149,4 +149,11 @@ export interface LearningRoomMessageModel{
   createdOn: Date
 }
 
+export interface Participant {
+  Name:string,
+  NickName: string,
+  Gender: number,
+  AvatarUrl: string
+}
+
 export const chatMessageService = new ChatMessageService(app.globalData.baseUrlWs, app.globalData.baseUrlApp);

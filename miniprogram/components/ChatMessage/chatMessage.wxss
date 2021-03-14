@@ -9,18 +9,29 @@ page{
   display: flex;
   flex-direction: column;
 }
-
 .participant-status{
   display: flex;
-  height: 15%;
-  flex-direction: row;  
-  justify-content: flex-end;
+  height: 5%;
+}
+.participant-group {
+  margin-top: 5rpx;
+}
+.participant-statics{
+  height: 100%;
+  justify-self: center;
+}
+.participant-container {
+  display: flex;
+  flex-direction: column;
+}
+.participant-avatar-image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
 }
 .message-display {
-  height: 70%;
-  /* overflow: scroll; */
+  height: 80%;
 }
-
 .message-input {
   display: flex;
   flex-direction: row;
