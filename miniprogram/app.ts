@@ -9,6 +9,7 @@ App<IAppOption>({
     userInfo: undefined,
     // baseUrlAuth: "https://www.idea-activator.com:7002/api/",
     // baseUrlApp: "https://www.idea-activator.com:7003/api/",
+    // baseUrlWs: "wss://www.idea-activator.com"
     baseUrlAuth: "http://192.168.31.250:8002/api/",
     baseUrlApp: "http://192.168.31.250:8003/api/",
     baseUrlWs: "ws://192.168.31.250:8003/"

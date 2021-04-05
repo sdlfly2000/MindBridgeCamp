@@ -10,6 +10,6 @@
     <van-field model:value="{{noteContent}}" placeholder="笔记说明" label="笔记说明"/>
   </mp-form>
   <view class="weui-btn-area">
-    <button class="weui-btn" type="primary" bindtap="SubmitShareNotes">确定</button>
+    <van-button type="info" block bindtap="SubmitShareNotes">确定</van-button>
   </view>
 </view>
