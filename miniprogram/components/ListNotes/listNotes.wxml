@@ -1,5 +1,8 @@
+<view class="notes-header">
+  <van-button icon="plus" type="primary" bind:click="CreateNote"/>
+</view>
 <view class="notes-container">
-  <van-card custom-class="invitation-item" title-class="invitation-title" wx:for="{{Invitations}}" wx:key="index" desc="{{item.LearningContent}}" title="{{item.Title}}" thumb="{{item.Thumb}}">
+  <van-card custom-class="note-item" title-class="note-title" wx:for="{{Notes}}" wx:key="index" desc="{{item.LearningContent}}" title="{{item.Title}}" thumb="{{item.Thumb}}">
     <view slot="price-top">
       <text>开始时间： {{item.StartDate}}</text>
     </view> 

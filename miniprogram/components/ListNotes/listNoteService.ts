@@ -1,3 +1,5 @@
+import { NoteModel } from "../../models/Note/NoteModel";
+
 var app = getApp<IAppOption>();
 
 class ListNoteService {
@@ -6,8 +8,28 @@ class ListNoteService {
     this.BaseUrlApp = baseUrlApp;
   };
 
-  public GetValidNotes(){
+  public Create(note: NoteModel){
+    return new Promise(
+      (resolve, error) => {
+        wx.request({
+          url: this.BaseUrlApp + "Note/Create/" + this.GetLoginToken(),
+          method: 'POST',
+          data: {
+            model: note
+          },
+          success: function(res) {
+            resolve(res);
+          },
+          fail: function(res) {
+            error(res);
+          }
+        });
+      }
+    );
+  }
 
+  public GetValidNotes(){
+    
   }
 
   private GetLoginToken(): string {    

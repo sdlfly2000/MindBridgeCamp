@@ -1,5 +1,5 @@
 <van-grid column-num="3" border="{{false}}" custom-class="action-menu">
   <van-grid-item name="invitation" icon="friends-o" text="发起邀约" url="/components/Invitation/invitation" custom-class="item-menu"/>
-  <van-grid-item name="noteShare" icon="like-o" text="笔记分享" url="/components/ShareNotes/shareNotes" custom-class="item-menu" />
+  <van-grid-item name="noteShare" icon="like-o" text="笔记分享" url="/components/ListNotes/listNotes" custom-class="item-menu" />
   <van-grid-item name="exchange" icon="gift-o" text="物品交换" url-comment="/components/Exchange/exchange" custom-class="item-menu" />
 </van-grid>

@@ -16,7 +16,8 @@
     "components/Exchange/exchange",
     "components/InvitationDetail/invitationDetail",
     "components/PersonalDetails/personalDetails",
-    "components/ChatMessage/chatMessage"
+    "components/ChatMessage/chatMessage",
+    "components/ListNotes/listNotes"
   ],
   "tabBar": {
     "custom": true,

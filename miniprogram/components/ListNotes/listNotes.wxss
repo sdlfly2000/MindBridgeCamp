@@ -1,1 +1,5 @@
-/* components/ListNotes/listNotes.wxss */
+.notes-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
